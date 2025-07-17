@@ -299,76 +299,158 @@ const Portfolio = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-muted/30">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16 fade-in-up">
-            <h2 className="section-title">About Me</h2>
-            <p className="section-subtitle">
-              Passionate developer with a strong foundation in computer science and full-stack development
+      <section id="about" className="py-24 bg-gradient-to-br from-muted/30 via-background to-muted/20 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-40 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 -right-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-20 fade-in-up">
+            <div className="inline-block mb-4">
+              <Badge variant="outline" className="px-6 py-2 text-sm font-medium border-primary/30">
+                🚀 About Me
+              </Badge>
+            </div>
+            <h2 className="section-title mb-6">Building Digital Excellence</h2>
+            <p className="section-subtitle max-w-3xl mx-auto">
+              Passionate developer with a strong foundation in computer science and full-stack development, 
+              committed to creating impactful solutions that make a difference.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Bio & Contact */}
             <div className="fade-in-up">
-              <p className="text-lg leading-relaxed mb-6">
-                I'm Sayyad Fayaz Basha, a Computer Science Engineering student at Sri Venkateswara Institute of Technology 
-                with a CGPA of 8.8. I am passionate about Java full stack development, blending strong front-end design 
-                with robust backend logic.
-              </p>
-              <p className="text-lg leading-relaxed mb-8">
-                Eager to contribute to innovative tech solutions with a growth mindset and problem-solving focus. 
-                I believe in continuous learning and applying new technologies to create meaningful applications.
-              </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-primary" />
-                  <span>+91 9703029115</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-primary" />
-                  <span>fayaz1234basha@gmail.com</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-primary" />
-                  <span>Dharmavaram, AP</span>
-                </div>
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl blur-xl"></div>
+                <Card className="relative bg-background/80 backdrop-blur-sm border-primary/20">
+                  <CardContent className="p-8">
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="text-2xl font-bold mb-4 gradient-text">Hi there! 👋</h3>
+                        <p className="text-lg leading-relaxed text-muted-foreground">
+                          I'm <span className="text-primary font-semibold">Sayyad Fayaz Basha</span>, a Computer Science Engineering student at 
+                          Sri Venkateswara Institute of Technology with a <span className="text-primary font-semibold">CGPA of 8.8</span>. 
+                          I am passionate about Java full stack development, blending strong front-end design with robust backend logic.
+                        </p>
+                      </div>
+                      
+                      <div>
+                        <p className="text-lg leading-relaxed text-muted-foreground">
+                          Eager to contribute to innovative tech solutions with a growth mindset and problem-solving focus. 
+                          I believe in continuous learning and applying new technologies to create meaningful applications that solve real-world problems.
+                        </p>
+                      </div>
+                      
+                      <div className="grid grid-cols-1 gap-4 pt-6">
+                        <div className="flex items-center space-x-4 p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
+                          <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                            <Phone className="h-5 w-5 text-primary" />
+                          </div>
+                          <div>
+                            <p className="text-sm text-muted-foreground">Phone</p>
+                            <p className="font-medium">+91 9703029115</p>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-center space-x-4 p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
+                          <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                            <Mail className="h-5 w-5 text-primary" />
+                          </div>
+                          <div>
+                            <p className="text-sm text-muted-foreground">Email</p>
+                            <p className="font-medium">fayaz1234basha@gmail.com</p>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-center space-x-4 p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
+                          <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                            <MapPin className="h-5 w-5 text-primary" />
+                          </div>
+                          <div>
+                            <p className="text-sm text-muted-foreground">Location</p>
+                            <p className="font-medium">Dharmavaram, AP</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
             
+            {/* Education Timeline */}
             <div className="fade-in-up">
-              <h3 className="text-2xl font-semibold mb-6 gradient-text">Education Timeline</h3>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                    <GraduationCap className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">B.Tech CSE</h4>
-                    <p className="text-sm text-muted-foreground">SVIT, Anantapur (2022–Present)</p>
-                    <p className="text-sm">CGPA: 8.8</p>
-                  </div>
-                </div>
+              <div className="mb-8">
+                <h3 className="text-3xl font-bold mb-2">Educational Journey</h3>
+                <p className="text-muted-foreground">Academic excellence and continuous growth</p>
+              </div>
+              
+              <div className="relative">
+                {/* Timeline Line */}
+                <div className="absolute left-6 top-8 bottom-8 w-0.5 bg-gradient-to-b from-primary to-accent"></div>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                    <GraduationCap className="h-6 w-6 text-primary" />
+                <div className="space-y-8">
+                  <div className="relative flex items-start space-x-6">
+                    <div className="relative z-10 w-12 h-12 bg-gradient-to-br from-primary to-primary-glow rounded-xl flex items-center justify-center shadow-lg">
+                      <GraduationCap className="h-6 w-6 text-primary-foreground" />
+                    </div>
+                    <div className="flex-1 pb-8">
+                      <Card className="bg-background/50 backdrop-blur-sm border-primary/20 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
+                        <CardContent className="p-6">
+                          <div className="flex items-center justify-between mb-2">
+                            <h4 className="text-xl font-bold">B.Tech CSE</h4>
+                            <Badge className="bg-green-500/20 text-green-700 dark:text-green-300">
+                              CGPA: 8.8
+                            </Badge>
+                          </div>
+                          <p className="text-primary font-medium mb-1">SVIT, Anantapur</p>
+                          <p className="text-sm text-muted-foreground">2022 – Present</p>
+                        </CardContent>
+                      </Card>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold">Intermediate</h4>
-                    <p className="text-sm text-muted-foreground">Sri Sai Krupa Junior College (2020–2022)</p>
-                    <p className="text-sm">CGPA: 9.4</p>
+                  
+                  <div className="relative flex items-start space-x-6">
+                    <div className="relative z-10 w-12 h-12 bg-gradient-to-br from-accent to-accent rounded-xl flex items-center justify-center shadow-lg">
+                      <GraduationCap className="h-6 w-6 text-accent-foreground" />
+                    </div>
+                    <div className="flex-1 pb-8">
+                      <Card className="bg-background/50 backdrop-blur-sm border-primary/20 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
+                        <CardContent className="p-6">
+                          <div className="flex items-center justify-between mb-2">
+                            <h4 className="text-xl font-bold">Intermediate</h4>
+                            <Badge className="bg-blue-500/20 text-blue-700 dark:text-blue-300">
+                              CGPA: 9.4
+                            </Badge>
+                          </div>
+                          <p className="text-primary font-medium mb-1">Sri Sai Krupa Junior College</p>
+                          <p className="text-sm text-muted-foreground">2020 – 2022</p>
+                        </CardContent>
+                      </Card>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                    <GraduationCap className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">10th Grade</h4>
-                    <p className="text-sm text-muted-foreground">Layola English Medium School (2019–2020)</p>
-                    <p className="text-sm">CGPA: 9.2</p>
+                  
+                  <div className="relative flex items-start space-x-6">
+                    <div className="relative z-10 w-12 h-12 bg-gradient-to-br from-secondary to-secondary rounded-xl flex items-center justify-center shadow-lg">
+                      <GraduationCap className="h-6 w-6 text-secondary-foreground" />
+                    </div>
+                    <div className="flex-1">
+                      <Card className="bg-background/50 backdrop-blur-sm border-primary/20 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
+                        <CardContent className="p-6">
+                          <div className="flex items-center justify-between mb-2">
+                            <h4 className="text-xl font-bold">10th Grade</h4>
+                            <Badge className="bg-purple-500/20 text-purple-700 dark:text-purple-300">
+                              CGPA: 9.2
+                            </Badge>
+                          </div>
+                          <p className="text-primary font-medium mb-1">Layola English Medium School</p>
+                          <p className="text-sm text-muted-foreground">2019 – 2020</p>
+                        </CardContent>
+                      </Card>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -378,68 +460,166 @@ const Portfolio = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16 fade-in-up">
-            <h2 className="section-title">Skills & Technologies</h2>
-            <p className="section-subtitle">
-              Proficient in modern development technologies and frameworks
+      <section id="skills" className="py-24 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 right-20 w-64 h-64 bg-accent/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-20 fade-in-up">
+            <div className="inline-block mb-4">
+              <Badge variant="outline" className="px-6 py-2 text-sm font-medium border-primary/30">
+                💻 Technical Skills
+              </Badge>
+            </div>
+            <h2 className="section-title mb-6">Skills & Technologies</h2>
+            <p className="section-subtitle max-w-3xl mx-auto">
+              Proficient in modern development technologies and frameworks, 
+              constantly expanding my technical expertise to stay current with industry standards.
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {skills.map((skill, index) => (
-              <Card key={index} className="card-hover fade-in-up bg-card border-border">
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                      <skill.icon className="h-6 w-6 text-primary" />
-                      <span className="font-semibold">{skill.name}</span>
+              <div key={index} className="fade-in-up group">
+                <Card className="card-hover bg-background/50 backdrop-blur-sm border-primary/20 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500">
+                  <CardContent className="p-8">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="flex items-center space-x-4">
+                        <div className="p-3 bg-primary/20 rounded-xl group-hover:bg-primary/30 transition-colors">
+                          <skill.icon className="h-6 w-6 text-primary" />
+                        </div>
+                        <div>
+                          <span className="font-bold text-lg">{skill.name}</span>
+                          <p className="text-sm text-muted-foreground">Professional Level</p>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <span className="text-2xl font-bold text-primary">{skill.level}%</span>
+                      </div>
                     </div>
-                    <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                  </div>
-                  <div className="skill-progress-bar">
-                    <div 
-                      className="skill-progress-fill" 
-                      style={{ '--progress-width': `${skill.level}%` } as React.CSSProperties}
-                    ></div>
-                  </div>
-                </CardContent>
-              </Card>
+                    
+                    {/* Enhanced Progress Bar */}
+                    <div className="relative">
+                      <div className="h-3 bg-muted rounded-full overflow-hidden">
+                        <div 
+                          className="h-full bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-1000 ease-out"
+                          style={{ width: `${skill.level}%` }}
+                        ></div>
+                      </div>
+                      <div className="flex justify-between text-xs text-muted-foreground mt-2">
+                        <span>Beginner</span>
+                        <span>Expert</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             ))}
+          </div>
+          
+          {/* Additional Skills Tags */}
+          <div className="mt-16 text-center fade-in-up">
+            <h3 className="text-xl font-semibold mb-6">Additional Technologies</h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {['Spring Boot', 'JSP/Servlets', 'Bootstrap', 'Git', 'VS Code', 'Eclipse', 'Responsive Design', 'API Integration'].map((tech, index) => (
+                <Badge 
+                  key={index} 
+                  variant="outline" 
+                  className="px-4 py-2 text-sm font-medium hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
+                >
+                  {tech}
+                </Badge>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 bg-muted/30">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16 fade-in-up">
-            <h2 className="section-title">Experience</h2>
-            <p className="section-subtitle">
-              Professional internships and hands-on learning experiences
+      <section id="experience" className="py-24 bg-gradient-to-br from-muted/20 via-background to-muted/30 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-40 left-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 right-20 w-72 h-72 bg-accent/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-20 fade-in-up">
+            <div className="inline-block mb-4">
+              <Badge variant="outline" className="px-6 py-2 text-sm font-medium border-primary/30">
+                🚀 Professional Journey
+              </Badge>
+            </div>
+            <h2 className="section-title mb-6">Experience & Internships</h2>
+            <p className="section-subtitle max-w-3xl mx-auto">
+              Professional internships and hands-on learning experiences that shaped my development journey, 
+              providing real-world exposure to industry practices and technologies.
             </p>
           </div>
           
-          <div className="max-w-4xl mx-auto">
-            {experiences.map((exp, index) => (
-              <div key={index} className="flex items-start space-x-6 mb-8 fade-in-up">
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <exp.icon className="h-6 w-6 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                    <h3 className="text-xl font-semibold">{exp.title}</h3>
-                    <Badge variant="secondary" className="w-fit">
-                      <Calendar className="h-4 w-4 mr-1" />
-                      {exp.period}
-                    </Badge>
+          <div className="max-w-5xl mx-auto">
+            <div className="relative">
+              {/* Timeline Line */}
+              <div className="absolute left-8 top-16 bottom-16 w-1 bg-gradient-to-b from-primary via-accent to-primary rounded-full"></div>
+              
+              <div className="space-y-12">
+                {experiences.map((exp, index) => (
+                  <div key={index} className="relative fade-in-up group">
+                    <div className="flex items-start space-x-8">
+                      {/* Timeline Node */}
+                      <div className="relative z-10 flex-shrink-0">
+                        <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                          <exp.icon className="h-8 w-8 text-primary-foreground" />
+                        </div>
+                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-4 border-background"></div>
+                      </div>
+                      
+                      {/* Content Card */}
+                      <div className="flex-1 pb-12">
+                        <Card className="bg-background/80 backdrop-blur-sm border-primary/20 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 group-hover:scale-[1.02]">
+                          <CardContent className="p-8">
+                            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                              <div>
+                                <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
+                                  {exp.title}
+                                </h3>
+                                <p className="text-primary font-semibold text-lg mb-1">{exp.company}</p>
+                              </div>
+                              <Badge className="bg-primary/20 text-primary border-primary/30 px-4 py-2 w-fit">
+                                <Calendar className="h-4 w-4 mr-2" />
+                                {exp.period}
+                              </Badge>
+                            </div>
+                            <p className="text-muted-foreground leading-relaxed text-lg">
+                              {exp.description}
+                            </p>
+                            
+                            {/* Skills gained */}
+                            <div className="mt-6 flex flex-wrap gap-2">
+                              {index === 0 && ['Java', 'OOP', 'Problem Solving'].map((skill, i) => (
+                                <Badge key={i} variant="outline" className="text-xs">{skill}</Badge>
+                              ))}
+                              {index === 1 && ['AI/ML', 'Python', 'Data Analysis'].map((skill, i) => (
+                                <Badge key={i} variant="outline" className="text-xs">{skill}</Badge>
+                              ))}
+                              {index === 2 && ['Software Development', 'Team Work', 'Agile'].map((skill, i) => (
+                                <Badge key={i} variant="outline" className="text-xs">{skill}</Badge>
+                              ))}
+                              {index === 3 && ['HTML/CSS', 'JavaScript', 'Responsive Design'].map((skill, i) => (
+                                <Badge key={i} variant="outline" className="text-xs">{skill}</Badge>
+                              ))}
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-primary font-medium mb-2">{exp.company}</p>
-                  <p className="text-muted-foreground">{exp.description}</p>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
