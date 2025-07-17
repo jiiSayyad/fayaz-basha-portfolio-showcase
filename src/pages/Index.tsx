@@ -165,48 +165,135 @@ const Portfolio = () => {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-accent/20"></div>
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
           style={{ backgroundImage: `url(${heroBg})` }}
         >
-          <div className="absolute inset-0 bg-background/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
+        </div>
+        
+        {/* Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary/5 to-accent/5 rounded-full blur-3xl animate-pulse delay-500"></div>
         </div>
         
         <div className="relative z-10 container mx-auto px-6 text-center">
+          {/* Main Content */}
           <div className="hero-text-slide">
-            <div className="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-primary shadow-2xl hero-image-float">
-              <img 
-                src={profileImage} 
-                alt="Sayyad Fayaz Basha" 
-                className="w-full h-full object-cover"
-              />
+            {/* Profile Image with Glassmorphism */}
+            <div className="relative w-56 h-56 mx-auto mb-12 group">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full p-1 animate-pulse">
+                <div className="w-full h-full bg-background rounded-full p-2">
+                  <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl">
+                    <img 
+                      src={profileImage} 
+                      alt="Sayyad Fayaz Basha" 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                </div>
+              </div>
+              {/* Floating Badge */}
+              <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-primary to-accent text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold shadow-lg animate-bounce">
+                Available
+              </div>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Hi, I'm <span className="gradient-text">Fayaz Basha</span>
-            </h1>
+            {/* Animated Title */}
+            <div className="mb-8">
+              <div className="text-lg md:text-xl text-muted-foreground mb-4 tracking-wider font-medium">
+                Welcome to my portfolio
+              </div>
+              <h1 className="text-6xl md:text-8xl font-bold mb-4 leading-tight">
+                Hi, I'm{' '}
+                <span className="relative inline-block">
+                  <span className="gradient-text">Fayaz Basha</span>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
+                </span>
+              </h1>
+              <div className="relative">
+                <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-2">
+                  Java Full Stack Developer
+                </h2>
+                <div className="h-1 w-32 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+              </div>
+            </div>
             
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Aspiring Java Full Stack Developer passionate about creating innovative tech solutions
-            </p>
+            {/* Enhanced Description */}
+            <div className="max-w-4xl mx-auto mb-12">
+              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-6">
+                Passionate about creating <span className="text-primary font-semibold">innovative tech solutions</span> that bridge 
+                the gap between elegant design and robust functionality
+              </p>
+              <div className="flex flex-wrap justify-center gap-3 mb-8">
+                <Badge variant="secondary" className="px-4 py-2 text-sm">⚡ Java Expert</Badge>
+                <Badge variant="secondary" className="px-4 py-2 text-sm">🎨 UI/UX Focused</Badge>
+                <Badge variant="secondary" className="px-4 py-2 text-sm">🚀 Innovation Driven</Badge>
+              </div>
+            </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button className="btn-primary" onClick={() => window.open('#', '_blank')}>
-                <Download className="mr-2 h-5 w-5" />
-                View Resume
+            {/* Enhanced CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+              <Button 
+                size="lg"
+                className="btn-primary group relative overflow-hidden px-8 py-4 text-lg font-semibold"
+                onClick={() => window.open('#', '_blank')}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-glow to-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                <Download className="mr-3 h-5 w-5 relative z-10 group-hover:animate-bounce" />
+                <span className="relative z-10">View Resume</span>
               </Button>
-              <Button variant="outline" className="btn-outline" onClick={() => scrollToSection('contact')}>
-                <Mail className="mr-2 h-5 w-5" />
-                Contact Me
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="btn-outline group relative px-8 py-4 text-lg font-semibold border-2"
+                onClick={() => scrollToSection('contact')}
+              >
+                <Mail className="mr-3 h-5 w-5 group-hover:animate-pulse" />
+                Let's Connect
               </Button>
+            </div>
+            
+            {/* Social Links */}
+            <div className="flex justify-center gap-6 mb-12">
+              <a 
+                href="#" 
+                className="p-3 rounded-full bg-background/20 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/25"
+              >
+                <Github className="h-6 w-6 text-primary" />
+              </a>
+              <a 
+                href="#" 
+                className="p-3 rounded-full bg-background/20 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/25"
+              >
+                <Linkedin className="h-6 w-6 text-primary" />
+              </a>
+              <a 
+                href="mailto:fayaz1234basha@gmail.com" 
+                className="p-3 rounded-full bg-background/20 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/25"
+              >
+                <Mail className="h-6 w-6 text-primary" />
+              </a>
             </div>
           </div>
           
-          <div className="scroll-indicator">
-            <ArrowDown 
-              className="h-6 w-6 mx-auto text-primary cursor-pointer"
-              onClick={() => scrollToSection('about')}
-            />
+          {/* Enhanced Scroll Indicator */}
+          <div className="scroll-indicator relative">
+            <div className="flex flex-col items-center gap-2">
+              <span className="text-sm text-muted-foreground font-medium">Scroll to explore</span>
+              <div className="relative">
+                <div className="absolute inset-0 bg-primary/20 rounded-full blur animate-pulse"></div>
+                <ArrowDown 
+                  className="relative h-8 w-8 text-primary cursor-pointer hover:scale-110 transition-transform duration-300 animate-bounce"
+                  onClick={() => scrollToSection('about')}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
