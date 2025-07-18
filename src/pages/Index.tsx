@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import profileImage from '@/assets/profile-image.jpg';
+import profilePhoto from '@/assets/profile-photo.jpg';
 import heroBg from '@/assets/hero-bg.jpg';
 
 const Portfolio = () => {
@@ -190,7 +190,7 @@ const Portfolio = () => {
                 <div className="w-full h-full bg-background rounded-full p-2">
                   <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl">
                     <img 
-                      src={profileImage} 
+                      src={profilePhoto} 
                       alt="Sayyad Fayaz Basha" 
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
