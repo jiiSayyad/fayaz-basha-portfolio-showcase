@@ -10,6 +10,8 @@ import { useToast } from '@/hooks/use-toast';
 import emailjs from '@emailjs/browser';
 import profilePhoto from '@/assets/profile-photo.jpg';
 import heroBg from '@/assets/hero-bg.jpg';
+import project1Image from '@/assets/project-1.jpg';
+import project2Image from '@/assets/project-2.jpg';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -122,14 +124,14 @@ const Portfolio = () => {
       description: 'A comprehensive PDF resource website built with HTML, CSS, and JavaScript. Features study materials, video tutorials, and coding platform integrations.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
       link: '#',
-      image: '/placeholder.svg',
+      image: project1Image,
     },
     {
       title: 'E-Commerce Website',
       description: 'Full-stack e-commerce application with user management, product catalog, and admin dashboard. Built using Java, JSP/Servlets, and MySQL.',
       technologies: ['Java', 'JSP/Servlets', 'MySQL', 'Bootstrap'],
       link: '#',
-      image: '/placeholder.svg',
+      image: project2Image,
     },
   ];
 
@@ -690,7 +692,7 @@ const Portfolio = () => {
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 opacity-50"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   {/* Project Number Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center">
