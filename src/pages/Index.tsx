@@ -170,7 +170,7 @@ const Portfolio = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-xl font-bold gradient-text">Fayaz Basha</div>
+            <div className="text-xl font-bold gradient-text">SAYYAD FAYAZ BASHA</div>
             <div className="hidden md:flex space-x-8">
               {['Home', 'About', 'Skills', 'Experience', 'Projects', 'Contact'].map((item) => (
                 <button
@@ -199,11 +199,20 @@ const Portfolio = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
         </div>
         
-        {/* Floating Elements */}
+        {/* Floating Geometric Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary/5 to-accent/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+          <div className="absolute top-20 left-20 w-32 h-32 border-2 border-primary/30 rounded-lg rotate-45 animate-spin" style={{ animationDuration: '20s' }}></div>
+          <div className="absolute bottom-20 right-20 w-24 h-24 border-2 border-accent/30 rounded-full animate-pulse"></div>
+          <div className="absolute top-40 right-40 w-16 h-16 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full animate-bounce"></div>
+          <div className="absolute bottom-40 left-40 w-20 h-20 border border-primary/20 rotate-12 animate-pulse delay-700"></div>
+          {/* Animated Grid Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="grid grid-cols-8 gap-8 h-full">
+              {[...Array(64)].map((_, i) => (
+                <div key={i} className="border border-primary/20 animate-pulse" style={{ animationDelay: `${i * 100}ms` }}></div>
+              ))}
+            </div>
+          </div>
         </div>
         
         <div className="relative z-10 container mx-auto px-6 text-center">
@@ -650,43 +659,99 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16 fade-in-up">
-            <h2 className="section-title">Featured Projects</h2>
-            <p className="section-subtitle">
-              Showcasing my technical skills through real-world applications
+      <section id="projects" className="py-24 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-32 h-32 border border-primary rounded-full"></div>
+          <div className="absolute bottom-20 right-20 w-24 h-24 border border-purple-500 rounded-full"></div>
+          <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-cyan-500 rounded-full"></div>
+          <div className="absolute top-20 right-1/3 w-20 h-20 border border-accent rounded-square rotate-45"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-20 fade-in-up">
+            <div className="inline-block mb-4">
+              <Badge variant="outline" className="px-6 py-2 text-sm font-medium border-primary/30">
+                💼 Portfolio
+              </Badge>
+            </div>
+            <h2 className="section-title mb-6">Featured Projects</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary to-purple-600 mx-auto mb-6 rounded-full"></div>
+            <p className="section-subtitle max-w-3xl mx-auto">
+              Showcasing my technical skills through real-world applications that demonstrate 
+              innovation, problem-solving, and modern development practices.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {projects.map((project, index) => (
-              <Card key={index} className="card-hover card-glow fade-in-up bg-card border-border overflow-hidden">
-                <div className="aspect-video bg-muted relative overflow-hidden">
+              <Card key={index} className="card-hover card-glow fade-in-up bg-background/80 backdrop-blur-sm border-primary/20 overflow-hidden group">
+                <div className="aspect-video bg-gradient-to-br from-primary/20 to-purple-600/20 relative overflow-hidden">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 opacity-50"
                   />
+                  {/* Project Number Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-8xl font-bold text-white/20 group-hover:text-white/30 transition-colors duration-300">
+                      0{index + 1}
+                    </div>
+                  </div>
+                  {/* Featured Badge */}
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
+                      Featured Project
+                    </Badge>
+                  </div>
+                  {/* Tech Stack Preview */}
+                  <div className="absolute bottom-4 right-4">
+                    <div className="flex gap-2">
+                      {project.technologies.slice(0, 2).map((tech, techIndex) => (
+                        <div key={techIndex} className="w-2 h-2 bg-white/60 rounded-full"></div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <CardHeader>
-                  <CardTitle className="flex items-center justify-between">
+                <CardHeader className="pb-4">
+                  <CardTitle className="flex items-center justify-between text-xl group-hover:text-primary transition-colors">
                     {project.title}
-                    <ExternalLink className="h-5 w-5 text-primary" />
+                    <ExternalLink className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
                   </CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
+                  <CardDescription className="text-base leading-relaxed">
+                    {project.description}
+                  </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
+                <CardContent className="pt-0">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="outline">
+                      <Badge key={techIndex} variant="outline" className="text-xs hover:bg-primary/10 hover:border-primary/50 transition-colors">
                         {tech}
                       </Badge>
                     ))}
                   </div>
+                  <div className="flex gap-3">
+                    <Button size="sm" variant="outline" className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors flex-1">
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Live Demo
+                    </Button>
+                    <Button size="sm" variant="ghost" className="group-hover:bg-muted transition-colors">
+                      <Github className="w-4 h-4 mr-2" />
+                      Code
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
+          </div>
+          
+          {/* Call to Action */}
+          <div className="text-center mt-16 fade-in-up">
+            <p className="text-muted-foreground mb-6">Want to see more of my work?</p>
+            <Button variant="outline" size="lg" className="group">
+              <Github className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+              View All Projects on GitHub
+            </Button>
           </div>
         </div>
       </section>
