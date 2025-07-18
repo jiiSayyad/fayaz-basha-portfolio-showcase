@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 import profilePhoto from '@/assets/profile-photo.jpg';
 import heroBg from '@/assets/hero-bg.jpg';
 
@@ -42,13 +43,37 @@ const Portfolio = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    
+    try {
+      // Initialize EmailJS with your public key
+      await emailjs.send(
+        'service_zbyrq7s', // Service ID
+        'template_t705hc3', // Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: 'Fayaz Basha',
+        },
+        'mUEcCfofniJH7zJJ3' // Public Key
+      );
+      
+      toast({
+        title: "Message Sent Successfully!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+      
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    }
   };
 
   const skills = [
