@@ -689,11 +689,11 @@ const Portfolio = () => {
             {projects.map((project, index) => (
               <Card key={index} className="card-hover card-glow fade-in-up bg-background/80 backdrop-blur-sm border-primary/20 overflow-hidden group">
                 <div className="aspect-video bg-gradient-to-br from-primary/20 to-purple-600/20 relative overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
+                  <div className="w-full h-full bg-gradient-to-br from-primary/90 via-primary/80 to-primary/70 flex items-center justify-center p-6 transition-all duration-300 group-hover:from-primary group-hover:via-primary/90 group-hover:to-primary/80">
+                    <h3 className="text-white text-2xl md:text-3xl font-bold text-center leading-tight">
+                      {project.title}
+                    </h3>
+                  </div>
                   {/* Project Number Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-8xl font-bold text-white/20 group-hover:text-white/30 transition-colors duration-300">
