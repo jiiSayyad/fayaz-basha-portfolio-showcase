@@ -91,15 +91,15 @@ const Portfolio = () => {
     {
       title: 'Java Full Stack Development Intern',
       company: 'Vaultsphere AI Technologies Pvt. Ltd.',
-      period: 'May - Jul 2025',
+      period: 'May 12 - Jul 12, 2025',
       description: 'Gained hands-on experience in both front-end and back-end development using Java technologies. Contributed to building responsive web applications, integrating RESTful APIs, and working with databases, showcasing a solid understanding of full stack development principles.',
       icon: Building,
     },
     {
       title: 'AI & Machine Learning Intern',
       company: 'SmartBridge Educational Services / AP State Council',
-      period: 'Jul 2025',
-      description: 'Completed a 2-month short-term internship in Artificial Intelligence & Machine Learning. Gained expertise in AI fundamentals, machine learning algorithms, and practical implementation of AI solutions.',
+      period: 'Jul 21, 2025 (2 months)',
+      description: 'Completed a 2-month short-term internship in Artificial Intelligence & Machine Learning. Gained expertise in AI fundamentals, machine learning algorithms, and practical implementation of AI solutions in collaboration with AP State Council of Higher Education.',
       icon: Building,
     },
     {
