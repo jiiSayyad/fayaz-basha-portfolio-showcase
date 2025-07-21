@@ -312,13 +312,17 @@ const Portfolio = () => {
             {/* Social Links */}
             <div className="flex justify-center gap-6 mb-12">
               <a 
-                href="#" 
+                href="https://github.com/SAYYADFAYAZBASHA" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 rounded-full bg-background/20 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/25"
               >
                 <Github className="h-6 w-6 text-primary" />
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/sayyadfayazbasha-9703029115-2003-developer/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 rounded-full bg-background/20 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/25"
               >
                 <Linkedin className="h-6 w-6 text-primary" />
