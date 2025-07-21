@@ -89,6 +89,20 @@ const Portfolio = () => {
 
   const experiences = [
     {
+      title: 'Java Full Stack Development Intern',
+      company: 'Vaultsphere AI Technologies Pvt. Ltd.',
+      period: 'May - Jul 2025',
+      description: 'Gained hands-on experience in both front-end and back-end development using Java technologies. Contributed to building responsive web applications, integrating RESTful APIs, and working with databases, showcasing a solid understanding of full stack development principles.',
+      icon: Building,
+    },
+    {
+      title: 'AI & Machine Learning Intern',
+      company: 'SmartBridge Educational Services / AP State Council',
+      period: 'Jul 2025',
+      description: 'Completed a 2-month short-term internship in Artificial Intelligence & Machine Learning. Gained expertise in AI fundamentals, machine learning algorithms, and practical implementation of AI solutions.',
+      icon: Building,
+    },
+    {
       title: 'Java Programming Intern',
       company: 'VaultofCodes.in',
       period: 'Jun - Jul 2025',
@@ -635,16 +649,22 @@ const Portfolio = () => {
                             
                             {/* Skills gained */}
                             <div className="mt-6 flex flex-wrap gap-2">
-                              {index === 0 && ['Java', 'OOP', 'Problem Solving'].map((skill, i) => (
+                              {index === 0 && ['Java Full Stack', 'RESTful APIs', 'Database Integration', 'Web Applications'].map((skill, i) => (
                                 <Badge key={i} variant="outline" className="text-xs">{skill}</Badge>
                               ))}
-                              {index === 1 && ['AI/ML', 'Python', 'Data Analysis'].map((skill, i) => (
+                              {index === 1 && ['AI/ML', 'Machine Learning Algorithms', 'Python', 'Data Analysis'].map((skill, i) => (
                                 <Badge key={i} variant="outline" className="text-xs">{skill}</Badge>
                               ))}
-                              {index === 2 && ['Software Development', 'Team Work', 'Agile'].map((skill, i) => (
+                              {index === 2 && ['Java', 'OOP', 'Problem Solving'].map((skill, i) => (
                                 <Badge key={i} variant="outline" className="text-xs">{skill}</Badge>
                               ))}
-                              {index === 3 && ['HTML/CSS', 'JavaScript', 'Responsive Design'].map((skill, i) => (
+                              {index === 3 && ['AI/ML', 'Python', 'Data Analysis'].map((skill, i) => (
+                                <Badge key={i} variant="outline" className="text-xs">{skill}</Badge>
+                              ))}
+                              {index === 4 && ['Software Development', 'Team Work', 'Agile'].map((skill, i) => (
+                                <Badge key={i} variant="outline" className="text-xs">{skill}</Badge>
+                              ))}
+                              {index === 5 && ['HTML/CSS', 'JavaScript', 'Responsive Design'].map((skill, i) => (
                                 <Badge key={i} variant="outline" className="text-xs">{skill}</Badge>
                               ))}
                             </div>
