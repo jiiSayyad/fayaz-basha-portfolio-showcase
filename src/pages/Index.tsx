@@ -336,7 +336,7 @@ const Portfolio = () => {
               <Button 
                 size="lg"
                 className="btn-primary group relative overflow-hidden px-8 py-4 text-lg font-semibold"
-                onClick={() => window.open('#', '_blank')}
+                onClick={() => window.open('https://i.postimg.cc/k461RSPL/S-3.png', '_blank')}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-glow to-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 <Download className="mr-3 h-5 w-5 relative z-10 group-hover:animate-bounce" />
@@ -725,11 +725,12 @@ const Portfolio = () => {
                               <Button 
                                 size="sm" 
                                 variant="outline" 
-                                className="hover:bg-primary hover:text-primary-foreground transition-colors"
+                                className="group relative overflow-hidden border-primary/50 hover:border-primary bg-gradient-to-r from-primary/5 to-accent/5 hover:from-primary/20 hover:to-accent/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/25"
                                 onClick={() => window.open(exp.certificateUrl, '_blank')}
                               >
-                                <ExternalLink className="w-4 h-4 mr-2" />
-                                View Certificate
+                                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                                <ExternalLink className="w-4 h-4 mr-2 relative z-10 group-hover:animate-pulse" />
+                                <span className="relative z-10">View Certificate</span>
                               </Button>
                             </div>
                           </CardContent>
@@ -856,15 +857,16 @@ const Portfolio = () => {
             {achievements.map((achievement, index) => (
               <Card 
                 key={index} 
-                className="card-hover fade-in-up bg-card border-border cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
+                className="card-hover fade-in-up bg-card border-border cursor-pointer group relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/30 border-primary/20 hover:border-primary/60 bg-gradient-to-br from-card via-card/90 to-card/80"
                 onClick={() => window.open(achievement.certificateUrl, '_blank')}
               >
-                <CardContent className="p-6 text-center">
-                  <achievement.icon className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <h3 className="font-semibold mb-2">{achievement.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-1">{achievement.issuer}</p>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <CardContent className="p-6 text-center relative z-10">
+                  <achievement.icon className="h-12 w-12 text-primary mx-auto mb-4 group-hover:animate-pulse" />
+                  <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors duration-300">{achievement.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-1 group-hover:text-foreground transition-colors duration-300">{achievement.issuer}</p>
                   <p className="text-sm text-primary mb-3">{achievement.year}</p>
-                  <Badge variant="outline" className="text-xs hover:bg-primary/10">
+                  <Badge variant="outline" className="text-xs hover:bg-primary/10 group-hover:bg-primary/20 group-hover:text-primary transition-colors duration-300">
                     <ExternalLink className="w-3 h-3 mr-1" />
                     View Certificate
                   </Badge>
