@@ -89,18 +89,28 @@ const Portfolio = () => {
 
   const experiences = [
     {
-      title: 'Java Full Stack Development Intern',
-      company: 'Vaultsphere AI Technologies Pvt. Ltd.',
-      period: 'May 12 - Jul 12, 2025',
-      description: 'Gained hands-on experience in both front-end and back-end development using Java technologies. Contributed to building responsive web applications, integrating RESTful APIs, and working with databases, showcasing a solid understanding of full stack development principles.',
+      title: 'Artificial Intelligence Machine Learning Intern',
+      company: 'SmartBridge',
+      period: 'May 2025 - Jul 2025',
+      description: 'Collaborated with SmartBridge Educational Services and the AP State Council of Higher Education on innovative projects while participating in a structured, government-endorsed 2-month professional development program in Artificial Intelligence and Machine Learning.',
       icon: Building,
+      certificateUrl: 'https://i.postimg.cc/8CTq4gGZ/Edunet-2025-april-10-may-10-Foundations-of-AI.png',
     },
     {
-      title: 'AI & Machine Learning Intern',
-      company: 'SmartBridge Educational Services / AP State Council',
-      period: 'Jul 21, 2025 (2 months)',
-      description: 'Completed a 2-month short-term internship in Artificial Intelligence & Machine Learning. Gained expertise in AI fundamentals, machine learning algorithms, and practical implementation of AI solutions in collaboration with AP State Council of Higher Education.',
+      title: 'Java Full Stack Intern',
+      company: 'Vaultsphere AI Technologies Pvt. Ltd.',
+      period: 'May 2025 – Jul 2025',
+      description: 'Interned as a Java Full Stack Developer at Vaultsphere AI Technologies, building web applications and working across the technology stack. Enhanced coding skills by working with REST APIs and databases while contributing to real-world projects under expert guidance.',
       icon: Building,
+      certificateUrl: 'https://i.postimg.cc/YCBsbB7J/valut-of-code-2025-6-7-java-programming.png',
+    },
+    {
+      title: 'Application Developer Intern – Web & Mobile',
+      company: 'Rooman Technologies',
+      period: 'May 5, 2025 – July 4, 2025',
+      description: 'Undertook a 2-month web & mobile app development internship at Rooman Technologies with IBM, Nasscom, NSDC, and Skill India. Earned Certificate (ID: CAN_36542946) and gained hands-on experience in design, testing, and deployment.',
+      icon: Building,
+      certificateUrl: 'https://i.postimg.cc/W4yq8WRv/Rooman-Certificate.png',
     },
     {
       title: 'Java Programming Intern',
@@ -108,13 +118,15 @@ const Portfolio = () => {
       period: 'Jun - Jul 2025',
       description: 'Developed Java applications and learned advanced programming concepts.',
       icon: Building,
+      certificateUrl: 'https://i.postimg.cc/YCBsbB7J/valut-of-code-2025-6-7-java-programming.png',
     },
     {
-      title: 'AI Foundations Intern',
-      company: 'Microsoft/AICTE/Edunet',
+      title: 'Foundations of AI Intern',
+      company: 'Microsoft Initiative (Edunet Foundation/AICTE)',
       period: 'Apr - May 2025',
       description: 'Gained expertise in artificial intelligence fundamentals and machine learning.',
       icon: Building,
+      certificateUrl: 'https://i.postimg.cc/8CTq4gGZ/Edunet-2025-april-10-may-10-Foundations-of-AI.png',
     },
     {
       title: 'Software Engineering Intern',
@@ -122,6 +134,7 @@ const Portfolio = () => {
       period: 'Jun - Aug 2024',
       description: 'Worked on software development projects and team collaboration.',
       icon: Building,
+      certificateUrl: 'https://i.postimg.cc/qRL6pbzL/ybi-2024-aug-Python-Programming-Internship-60days.png',
     },
     {
       title: 'Web Development Intern',
@@ -129,6 +142,7 @@ const Portfolio = () => {
       period: 'Jun 2024',
       description: 'Built responsive web applications using modern technologies.',
       icon: Building,
+      certificateUrl: 'https://i.postimg.cc/8PQ2n6BK/system-tron-2024-june-web-development.png',
     },
   ];
 
@@ -150,11 +164,41 @@ const Portfolio = () => {
   ];
 
   const achievements = [
-    { title: 'Java Certification', issuer: 'Coursera', year: '2024', icon: Award },
-    { title: 'MS Office Certification', issuer: 'Udemy', year: '2024', icon: Award },
-    { title: 'DSA in Java', issuer: 'Infosys Springboard', year: '2024', icon: Award },
-    { title: '1st Prize - Front-End Fusion', issuer: 'PRESTO 2K25', year: '2025', icon: Star },
-    { title: 'TCS ION Career Edge', issuer: 'TCS', year: '2024', icon: Award },
+    { 
+      title: 'The Java Language', 
+      issuer: 'Certified by Coursera', 
+      year: '2024', 
+      icon: Award,
+      certificateUrl: 'https://www.coursera.org/account/accomplishments/verify/NK3QEHZM2BZP'
+    },
+    { 
+      title: 'MS Office Course', 
+      issuer: 'Certified by Udemy', 
+      year: '2024', 
+      icon: Award,
+      certificateUrl: 'https://www.udemy.com/certificate/UC-57929309-4feb-4c8c-95c6-c66d8e47df91/'
+    },
+    { 
+      title: 'Data Structures and Algorithms using Java', 
+      issuer: 'Certified by Infosys Springboard', 
+      year: '2024', 
+      icon: Award,
+      certificateUrl: 'https://i.postimg.cc/15rGhkwx/dsa-infosys-spring-board.png'
+    },
+    { 
+      title: 'Front-End Fusion Winner', 
+      issuer: 'PRESTO 2K25', 
+      year: '2025', 
+      icon: Star,
+      certificateUrl: 'https://i.postimg.cc/ZY2Bhy2b/achievement-1.jpg'
+    },
+    { 
+      title: 'TCS ION Career Edge', 
+      issuer: 'TCS', 
+      year: '2024', 
+      icon: Award,
+      certificateUrl: 'https://i.postimg.cc/50fJGFVW/tcs-ion-2023-sep-career-edge-young-professional.png'
+    },
   ];
 
   const services = [
@@ -653,24 +697,40 @@ const Portfolio = () => {
                             
                             {/* Skills gained */}
                             <div className="mt-6 flex flex-wrap gap-2">
-                              {index === 0 && ['Java Full Stack', 'RESTful APIs', 'Database Integration', 'Web Applications'].map((skill, i) => (
+                              {index === 0 && ['AI/ML', 'Machine Learning Algorithms', 'Python', 'Data Analysis'].map((skill, i) => (
                                 <Badge key={i} variant="outline" className="text-xs">{skill}</Badge>
                               ))}
-                              {index === 1 && ['AI/ML', 'Machine Learning Algorithms', 'Python', 'Data Analysis'].map((skill, i) => (
+                              {index === 1 && ['Java Full Stack', 'RESTful APIs', 'Database Integration', 'Web Applications'].map((skill, i) => (
                                 <Badge key={i} variant="outline" className="text-xs">{skill}</Badge>
                               ))}
-                              {index === 2 && ['Java', 'OOP', 'Problem Solving'].map((skill, i) => (
+                              {index === 2 && ['Web Development', 'Mobile Development', 'Design', 'Testing'].map((skill, i) => (
                                 <Badge key={i} variant="outline" className="text-xs">{skill}</Badge>
                               ))}
-                              {index === 3 && ['AI/ML', 'Python', 'Data Analysis'].map((skill, i) => (
+                              {index === 3 && ['Java', 'OOP', 'Problem Solving'].map((skill, i) => (
                                 <Badge key={i} variant="outline" className="text-xs">{skill}</Badge>
                               ))}
-                              {index === 4 && ['Software Development', 'Team Work', 'Agile'].map((skill, i) => (
+                              {index === 4 && ['AI/ML', 'Python', 'Data Analysis'].map((skill, i) => (
                                 <Badge key={i} variant="outline" className="text-xs">{skill}</Badge>
                               ))}
-                              {index === 5 && ['HTML/CSS', 'JavaScript', 'Responsive Design'].map((skill, i) => (
+                              {index === 5 && ['Software Development', 'Team Work', 'Agile'].map((skill, i) => (
                                 <Badge key={i} variant="outline" className="text-xs">{skill}</Badge>
                               ))}
+                              {index === 6 && ['HTML/CSS', 'JavaScript', 'Responsive Design'].map((skill, i) => (
+                                <Badge key={i} variant="outline" className="text-xs">{skill}</Badge>
+                              ))}
+                            </div>
+                            
+                            {/* View Certificate Button */}
+                            <div className="mt-6">
+                              <Button 
+                                size="sm" 
+                                variant="outline" 
+                                className="hover:bg-primary hover:text-primary-foreground transition-colors"
+                                onClick={() => window.open(exp.certificateUrl, '_blank')}
+                              >
+                                <ExternalLink className="w-4 h-4 mr-2" />
+                                View Certificate
+                              </Button>
                             </div>
                           </CardContent>
                         </Card>
@@ -794,12 +854,20 @@ const Portfolio = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {achievements.map((achievement, index) => (
-              <Card key={index} className="card-hover fade-in-up bg-card border-border">
+              <Card 
+                key={index} 
+                className="card-hover fade-in-up bg-card border-border cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
+                onClick={() => window.open(achievement.certificateUrl, '_blank')}
+              >
                 <CardContent className="p-6 text-center">
                   <achievement.icon className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h3 className="font-semibold mb-2">{achievement.title}</h3>
                   <p className="text-sm text-muted-foreground mb-1">{achievement.issuer}</p>
-                  <p className="text-sm text-primary">{achievement.year}</p>
+                  <p className="text-sm text-primary mb-3">{achievement.year}</p>
+                  <Badge variant="outline" className="text-xs hover:bg-primary/10">
+                    <ExternalLink className="w-3 h-3 mr-1" />
+                    View Certificate
+                  </Badge>
                 </CardContent>
               </Card>
             ))}
@@ -877,11 +945,29 @@ const Portfolio = () => {
               </div>
               
               <div className="flex space-x-4 mt-8">
-                <Button variant="outline" size="icon" className="hover:bg-primary hover:text-primary-foreground">
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  className="hover:bg-primary hover:text-primary-foreground"
+                  onClick={() => window.open('https://github.com/SAYYADFAYAZBASHA', '_blank')}
+                >
                   <Github className="h-5 w-5" />
                 </Button>
-                <Button variant="outline" size="icon" className="hover:bg-primary hover:text-primary-foreground">
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  className="hover:bg-primary hover:text-primary-foreground"
+                  onClick={() => window.open('https://www.linkedin.com/in/sayyadfayazbasha-9703029115-2003-developer/', '_blank')}
+                >
                   <Linkedin className="h-5 w-5" />
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  className="hover:bg-primary hover:text-primary-foreground"
+                  onClick={() => window.open('mailto:fayaz1234basha@gmail.com')}
+                >
+                  <Mail className="h-5 w-5" />
                 </Button>
               </div>
             </div>
