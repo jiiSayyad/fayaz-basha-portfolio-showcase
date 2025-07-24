@@ -303,13 +303,16 @@ const Portfolio = () => {
               <div className="text-lg md:text-xl text-muted-foreground mb-4 tracking-wider font-medium">
                 Welcome to my portfolio
               </div>
-              <h1 className="text-6xl md:text-8xl font-bold mb-4 leading-tight">
-                Hi, I'm{' '}
-                <span className="relative inline-block">
-                  <span className="gradient-text">Fayaz Basha</span>
-                  <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
-                </span>
-              </h1>
+               <h1 className="text-6xl md:text-8xl font-bold mb-4 leading-tight">
+                 Hi, I'm{' '}
+                 <span className="relative inline-block group">
+                   <span className="gradient-text animate-fade-in hover:animate-pulse bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent bg-300% animate-[gradient_3s_ease-in-out_infinite] hover:scale-110 transition-transform duration-300 cursor-default">
+                     Fayaz Basha
+                   </span>
+                   <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent blur opacity-30 group-hover:opacity-100 transition duration-1000 animate-pulse"></div>
+                   <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                 </span>
+               </h1>
               <div className="relative">
                 <h2 className="text-2xl md:text-4xl font-semibold text-primary mb-2">
                   Java Full Stack Developer
