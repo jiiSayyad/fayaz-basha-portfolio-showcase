@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowDown, Download, Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Code, Database, Globe, Smartphone, Award, Calendar, GraduationCap, Building, CheckCircle, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -14,6 +15,7 @@ import project1Image from '@/assets/project-1.jpg';
 import project2Image from '@/assets/project-2.jpg';
 
 const Portfolio = () => {
+  const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState('home');
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const { toast } = useToast();
@@ -99,7 +101,7 @@ const Portfolio = () => {
     {
       title: 'Java Full Stack Intern',
       company: 'Vaultsphere AI Technologies Pvt. Ltd.',
-      period: 'May 2025 – Jul 2025',
+      period: 'May 2025 - Jul 2025',
       description: 'Interned as a Java Full Stack Developer at Vaultsphere AI Technologies, building web applications and working across the technology stack. Enhanced coding skills by working with REST APIs and databases while contributing to real-world projects under expert guidance.',
       icon: Building,
       certificateUrl: 'https://i.postimg.cc/YCBsbB7J/valut-of-code-2025-6-7-java-programming.png',
@@ -107,7 +109,7 @@ const Portfolio = () => {
     {
       title: 'Application Developer Intern – Web & Mobile',
       company: 'Rooman Technologies',
-      period: 'May 5, 2025 – July 4, 2025',
+      period: 'May 2025 - Jul 2025',
       description: 'Undertook a 2-month web & mobile app development internship at Rooman Technologies with IBM, Nasscom, NSDC, and Skill India. Earned Certificate (ID: CAN_36542946) and gained hands-on experience in design, testing, and deployment.',
       icon: Building,
       certificateUrl: 'https://i.postimg.cc/W4yq8WRv/Rooman-Certificate.png',
@@ -115,7 +117,7 @@ const Portfolio = () => {
     {
       title: 'Java Programming Intern',
       company: 'VaultofCodes.in',
-      period: 'Jun - Jul 2025',
+      period: 'Jun 2025 - Jul 2025',
       description: 'Developed Java applications and learned advanced programming concepts.',
       icon: Building,
       certificateUrl: 'https://i.postimg.cc/YCBsbB7J/valut-of-code-2025-6-7-java-programming.png',
@@ -123,7 +125,7 @@ const Portfolio = () => {
     {
       title: 'Foundations of AI Intern',
       company: 'Microsoft Initiative (Edunet Foundation/AICTE)',
-      period: 'Apr - May 2025',
+      period: 'Apr 2025 - May 2025',
       description: 'Gained expertise in artificial intelligence fundamentals and machine learning.',
       icon: Building,
       certificateUrl: 'https://i.postimg.cc/8CTq4gGZ/Edunet-2025-april-10-may-10-Foundations-of-AI.png',
@@ -131,7 +133,7 @@ const Portfolio = () => {
     {
       title: 'Software Engineering Intern',
       company: 'YBI Foundation',
-      period: 'Jun - Aug 2024',
+      period: 'Jun 2024 - Aug 2024',
       description: 'Worked on software development projects and team collaboration.',
       icon: Building,
       certificateUrl: 'https://i.postimg.cc/qRL6pbzL/ybi-2024-aug-Python-Programming-Internship-60days.png',
@@ -151,14 +153,14 @@ const Portfolio = () => {
       title: 'B.Tech Academic Toolkit',
       description: 'A comprehensive PDF resource website built with HTML, CSS, and JavaScript. Features study materials, video tutorials, and coding platform integrations.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
-      link: '#',
+      link: '/btech-toolkit',
       image: project1Image,
     },
     {
       title: 'E-Commerce Website',
       description: 'Full-stack e-commerce application with user management, product catalog, and admin dashboard. Built using Java, JSP/Servlets, and MySQL.',
       technologies: ['Java', 'JSP/Servlets', 'MySQL', 'Bootstrap'],
-      link: '#',
+      link: '/ecommerce',
       image: project2Image,
     },
   ];
@@ -820,16 +822,21 @@ const Portfolio = () => {
                       </Badge>
                     ))}
                   </div>
-                  <div className="flex gap-3">
-                    <Button size="sm" variant="outline" className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors flex-1">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </Button>
-                    <Button size="sm" variant="ghost" className="group-hover:bg-muted transition-colors">
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </Button>
-                  </div>
+                   <div className="flex gap-3">
+                     <Button 
+                       size="sm" 
+                       variant="outline" 
+                       className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors flex-1"
+                       onClick={() => navigate(project.link)}
+                     >
+                       <ExternalLink className="w-4 h-4 mr-2" />
+                       Live Demo
+                     </Button>
+                     <Button size="sm" variant="ghost" className="group-hover:bg-muted transition-colors">
+                       <Github className="w-4 h-4 mr-2" />
+                       Code
+                     </Button>
+                   </div>
                 </CardContent>
               </Card>
             ))}
