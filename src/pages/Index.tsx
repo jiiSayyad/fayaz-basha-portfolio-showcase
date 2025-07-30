@@ -11,8 +11,8 @@ import { useToast } from '@/hooks/use-toast';
 import emailjs from '@emailjs/browser';
 import profilePhoto from '@/assets/profile-photo.jpg';
 import heroBg from '@/assets/hero-bg.jpg';
-import project1Image from '@/assets/project-1.jpg';
-import project2Image from '@/assets/project-2.jpg';
+import techToolkitImage from '@/assets/tech-toolkit-preview.png';
+import techmartImage from '@/assets/techmart-preview.png';
 
 const Portfolio = () => {
   const navigate = useNavigate();
@@ -150,18 +150,18 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: 'B.Tech Academic Toolkit',
+      title: 'Tech Academic Toolkit',
       description: 'A comprehensive PDF resource website built with HTML, CSS, and JavaScript. Features study materials, video tutorials, and coding platform integrations.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
-      link: '/btech-toolkit',
-      image: project1Image,
+      link: 'https://sayyadfayazbasha.github.io/Tech-Academic-Toolkit/',
+      image: techToolkitImage,
     },
     {
-      title: 'E-Commerce Website',
+      title: 'TechMart E-commerce Application',
       description: 'Full-stack e-commerce application with user management, product catalog, and admin dashboard. Built using Java, JSP/Servlets, and MySQL.',
       technologies: ['Java', 'JSP/Servlets', 'MySQL', 'Bootstrap'],
-      link: '/ecommerce',
-      image: project2Image,
+      link: 'https://sayyadfayazbasha.github.io/TechMart-E-commerce-Application-/',
+      image: techmartImage,
     },
   ];
 
@@ -827,14 +827,10 @@ const Portfolio = () => {
                        size="sm" 
                        variant="outline" 
                        className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors flex-1"
-                       onClick={() => navigate(project.link)}
+                       onClick={() => window.open(project.link, '_blank')}
                      >
                        <ExternalLink className="w-4 h-4 mr-2" />
                        Live Demo
-                     </Button>
-                     <Button size="sm" variant="ghost" className="group-hover:bg-muted transition-colors">
-                       <Github className="w-4 h-4 mr-2" />
-                       Code
                      </Button>
                    </div>
                 </CardContent>
