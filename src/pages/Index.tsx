@@ -779,22 +779,23 @@ const Portfolio = () => {
             {projects.map((project, index) => (
               <Card key={index} className="card-hover card-glow fade-in-up bg-background/80 backdrop-blur-sm border-primary/20 overflow-hidden group">
                 <div className="aspect-video bg-gradient-to-br from-primary/20 to-purple-600/20 relative overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-primary/90 via-primary/80 to-primary/70 flex items-center justify-center p-6 transition-all duration-300 group-hover:from-primary group-hover:via-primary/90 group-hover:to-primary/80">
-                    <h3 className="text-white text-2xl md:text-3xl font-bold text-center leading-tight">
-                      {project.title}
-                    </h3>
-                  </div>
-                  {/* Project Number Overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-8xl font-bold text-white/20 group-hover:text-white/30 transition-colors duration-300">
-                      0{index + 1}
-                    </div>
-                  </div>
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   {/* Featured Badge */}
                   <div className="absolute top-4 left-4">
                     <Badge className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
                       Featured Project
                     </Badge>
+                  </div>
+                  {/* Project Title Overlay */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-white text-xl md:text-2xl font-bold mb-2">
+                      {project.title}
+                    </h3>
                   </div>
                   {/* Tech Stack Preview */}
                   <div className="absolute bottom-4 right-4">
