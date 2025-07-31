@@ -341,7 +341,7 @@ const Portfolio = () => {
               <Button 
                 size="lg"
                 className="btn-primary group relative overflow-hidden px-8 py-4 text-lg font-semibold"
-                onClick={() => window.open('https://i.postimg.cc/k461RSPL/S-3.png', '_blank')}
+                onClick={() => window.open('https://i.postimg.cc/vZbqk9b6/S-3-2.png', '_blank')}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-glow to-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 <Download className="mr-3 h-5 w-5 relative z-10 group-hover:animate-bounce" />
@@ -841,7 +841,12 @@ const Portfolio = () => {
           {/* Call to Action */}
           <div className="text-center mt-16 fade-in-up">
             <p className="text-muted-foreground mb-6">Want to see more of my work?</p>
-            <Button variant="outline" size="lg" className="group">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="group"
+              onClick={() => window.open('https://github.com/SAYYADFAYAZBASHA', '_blank')}
+            >
               <Github className="w-5 h-5 mr-2 group-hover:animate-pulse" />
               View All Projects on GitHub
             </Button>
