@@ -286,7 +286,7 @@ const Portfolio = () => {
                 <div className="w-full h-full bg-background rounded-full p-2">
                   <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl">
                     <img 
-                      src={profilePhoto} 
+                      src="https://i.postimg.cc/VLknGwJH/profesional.jpg" 
                       alt="Sayyad Fayaz Basha" 
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
