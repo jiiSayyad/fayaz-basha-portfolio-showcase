@@ -226,20 +226,58 @@ const Portfolio = () => {
     },
   ];
 
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+      {/* Enhanced Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b glow-border">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="text-xl font-bold gradient-text">SAYYAD FAYAZ BASHA</div>
+            
+            {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
               {['Home', 'About', 'Skills', 'Experience', 'Projects', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    activeSection === item.toLowerCase() ? 'text-primary' : 'text-muted-foreground'
+                  className={`nav-link text-sm font-medium transition-colors hover:text-primary ${
+                    activeSection === item.toLowerCase() ? 'text-primary active' : 'text-muted-foreground'
+                  }`}
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+
+            {/* Mobile Menu Toggle */}
+            <div 
+              className={`mobile-menu-toggle ${mobileMenuOpen ? 'active' : ''}`}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <div className="mobile-menu-line"></div>
+              <div className="mobile-menu-line"></div>
+              <div className="mobile-menu-line"></div>
+            </div>
+          </div>
+
+          {/* Mobile Menu */}
+          <div className={`md:hidden transition-all duration-300 overflow-hidden ${
+            mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}>
+            <div className="pt-4 pb-2 space-y-2 animate-[slideDown_0.3s_ease-out]">
+              {['Home', 'About', 'Skills', 'Experience', 'Projects', 'Contact'].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => {
+                    scrollToSection(item.toLowerCase());
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`block w-full text-left py-2 px-4 rounded-lg transition-colors ${
+                    activeSection === item.toLowerCase() 
+                      ? 'text-primary bg-primary/10' 
+                      : 'text-muted-foreground hover:text-primary hover:bg-primary/5'
                   }`}
                 >
                   {item}
@@ -340,8 +378,8 @@ const Portfolio = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
               <Button 
                 size="lg"
-                className="btn-primary group relative overflow-hidden px-8 py-4 text-lg font-semibold"
-                onClick={() => window.open('https://i.postimg.cc/vZbqk9b6/S-3-2.png', '_blank')}
+                className="btn-enhanced group relative overflow-hidden px-8 py-4 text-lg font-semibold"
+                onClick={() => window.open('https://i.postimg.cc/1XDhXssS/s-5.png', '_blank')}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-glow to-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 <Download className="mr-3 h-5 w-5 relative z-10 group-hover:animate-bounce" />
@@ -350,7 +388,7 @@ const Portfolio = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="btn-outline group relative px-8 py-4 text-lg font-semibold border-2"
+                className="btn-outline-enhanced group relative px-8 py-4 text-lg font-semibold"
                 onClick={() => scrollToSection('contact')}
               >
                 <Mail className="mr-3 h-5 w-5 group-hover:animate-pulse" />
@@ -358,13 +396,13 @@ const Portfolio = () => {
               </Button>
             </div>
             
-            {/* Social Links */}
+            {/* Enhanced Social Links */}
             <div className="flex justify-center gap-6 mb-12">
               <a 
                 href="https://github.com/SAYYADFAYAZBASHA" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-background/20 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/25"
+                className="social-link"
               >
                 <Github className="h-6 w-6 text-primary" />
               </a>
@@ -372,13 +410,13 @@ const Portfolio = () => {
                 href="https://www.linkedin.com/in/sayyadfayazbasha-9703029115-2003-developer/" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-background/20 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/25"
+                className="social-link"
               >
                 <Linkedin className="h-6 w-6 text-primary" />
               </a>
               <a 
-                href="mailto:fayaz1234basha@gmail.com" 
-                className="p-3 rounded-full bg-background/20 backdrop-blur-sm border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/25"
+                href="mailto:fayaz1234basha@gmail.com"
+                className="social-link"
               >
                 <Mail className="h-6 w-6 text-primary" />
               </a>
@@ -428,7 +466,7 @@ const Portfolio = () => {
             <div className="fade-in-up">
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl blur-xl"></div>
-                <Card className="relative bg-background/80 backdrop-blur-sm border-primary/20">
+                <Card className="card-enhanced relative bg-background/80 backdrop-blur-sm">
                   <CardContent className="p-8">
                     <div className="space-y-6">
                       <div>
@@ -501,7 +539,7 @@ const Portfolio = () => {
                       <GraduationCap className="h-6 w-6 text-primary-foreground" />
                     </div>
                     <div className="flex-1 pb-8">
-                      <Card className="bg-background/50 backdrop-blur-sm border-primary/20 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
+                      <Card className="card-enhanced bg-background/50 backdrop-blur-sm">
                         <CardContent className="p-6">
                           <div className="flex items-center justify-between mb-2">
                             <h4 className="text-xl font-bold">B.Tech CSE</h4>
@@ -521,7 +559,7 @@ const Portfolio = () => {
                       <GraduationCap className="h-6 w-6 text-accent-foreground" />
                     </div>
                     <div className="flex-1 pb-8">
-                      <Card className="bg-background/50 backdrop-blur-sm border-primary/20 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
+                      <Card className="card-enhanced bg-background/50 backdrop-blur-sm">
                         <CardContent className="p-6">
                           <div className="flex items-center justify-between mb-2">
                             <h4 className="text-xl font-bold">Intermediate</h4>
@@ -541,7 +579,7 @@ const Portfolio = () => {
                       <GraduationCap className="h-6 w-6 text-secondary-foreground" />
                     </div>
                     <div className="flex-1">
-                      <Card className="bg-background/50 backdrop-blur-sm border-primary/20 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
+                      <Card className="card-enhanced bg-background/50 backdrop-blur-sm">
                         <CardContent className="p-6">
                           <div className="flex items-center justify-between mb-2">
                             <h4 className="text-xl font-bold">10th Grade</h4>
@@ -587,7 +625,7 @@ const Portfolio = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {skills.map((skill, index) => (
               <div key={index} className="fade-in-up group">
-                <Card className="card-hover bg-background/50 backdrop-blur-sm border-primary/20 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500">
+                <Card className="card-enhanced bg-background/50 backdrop-blur-sm">
                   <CardContent className="p-8">
                     <div className="flex items-center justify-between mb-6">
                       <div className="flex items-center space-x-4">
@@ -682,7 +720,7 @@ const Portfolio = () => {
                       
                       {/* Content Card */}
                       <div className="flex-1 pb-12">
-                        <Card className="bg-background/80 backdrop-blur-sm border-primary/20 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 group-hover:scale-[1.02]">
+                        <Card className="card-enhanced bg-background/80 backdrop-blur-sm">
                           <CardContent className="p-8">
                             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                               <div>
@@ -727,13 +765,12 @@ const Portfolio = () => {
                             
                             {/* View Certificate Button */}
                             <div className="mt-6">
-                              <Button 
+                               <Button 
                                 size="sm" 
                                 variant="outline" 
-                                className="group relative overflow-hidden border-primary/50 hover:border-primary bg-gradient-to-r from-primary/5 to-accent/5 hover:from-primary/20 hover:to-accent/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary/25"
+                                className="btn-outline-enhanced group relative overflow-hidden"
                                 onClick={() => window.open(exp.certificateUrl, '_blank')}
                               >
-                                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                                 <ExternalLink className="w-4 h-4 mr-2 relative z-10 group-hover:animate-pulse" />
                                 <span className="relative z-10">View Certificate</span>
                               </Button>
@@ -777,7 +814,7 @@ const Portfolio = () => {
           
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {projects.map((project, index) => (
-              <Card key={index} className="card-hover card-glow fade-in-up bg-background/80 backdrop-blur-sm border-primary/20 overflow-hidden group">
+              <Card key={index} className="card-enhanced fade-in-up bg-background/80 backdrop-blur-sm overflow-hidden group">
                 <div className="aspect-video bg-gradient-to-br from-primary/20 to-purple-600/20 relative overflow-hidden">
                   <img 
                     src={project.image} 
@@ -869,7 +906,7 @@ const Portfolio = () => {
             {achievements.map((achievement, index) => (
               <Card 
                 key={index} 
-                className="card-hover fade-in-up bg-card border-border cursor-pointer group relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/30 border-primary/20 hover:border-primary/60 bg-gradient-to-br from-card via-card/90 to-card/80"
+                className="card-enhanced fade-in-up bg-card cursor-pointer group relative overflow-hidden"
                 onClick={() => window.open(achievement.certificateUrl, '_blank')}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -901,7 +938,7 @@ const Portfolio = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="card-hover fade-in-up bg-card border-border text-center">
+              <Card key={index} className="card-enhanced fade-in-up bg-card text-center">
                 <CardContent className="p-6">
                   <service.icon className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h3 className="font-semibold mb-4">{service.title}</h3>
@@ -962,7 +999,7 @@ const Portfolio = () => {
                 <Button 
                   variant="outline" 
                   size="icon" 
-                  className="hover:bg-primary hover:text-primary-foreground"
+                  className="btn-outline-enhanced"
                   onClick={() => window.open('https://github.com/SAYYADFAYAZBASHA', '_blank')}
                 >
                   <Github className="h-5 w-5" />
@@ -970,7 +1007,7 @@ const Portfolio = () => {
                 <Button 
                   variant="outline" 
                   size="icon" 
-                  className="hover:bg-primary hover:text-primary-foreground"
+                  className="btn-outline-enhanced"
                   onClick={() => window.open('https://www.linkedin.com/in/sayyadfayazbasha-9703029115-2003-developer/', '_blank')}
                 >
                   <Linkedin className="h-5 w-5" />
@@ -978,7 +1015,7 @@ const Portfolio = () => {
                 <Button 
                   variant="outline" 
                   size="icon" 
-                  className="hover:bg-primary hover:text-primary-foreground"
+                  className="btn-outline-enhanced"
                   onClick={() => window.open('mailto:fayaz1234basha@gmail.com')}
                 >
                   <Mail className="h-5 w-5" />
@@ -986,7 +1023,7 @@ const Portfolio = () => {
               </div>
             </div>
             
-            <Card className="fade-in-up bg-card border-border">
+            <Card className="card-enhanced fade-in-up bg-card">
               <CardHeader>
                 <CardTitle>Send Me a Message</CardTitle>
                 <CardDescription>
@@ -1041,7 +1078,7 @@ const Portfolio = () => {
                       className="bg-background border-border"
                     />
                   </div>
-                  <Button type="submit" className="btn-primary w-full">
+                  <Button type="submit" className="btn-enhanced w-full">
                     <Mail className="mr-2 h-5 w-5" />
                     Send Message
                   </Button>
