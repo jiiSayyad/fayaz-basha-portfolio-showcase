@@ -865,7 +865,10 @@ const Portfolio = () => {
                        size="sm" 
                        variant="outline" 
                        className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors flex-1"
-                       onClick={() => window.open(project.link, '_blank')}
+                       onClick={() => {
+                         console.log('Opening:', project.link);
+                         window.open(project.link, '_blank', 'noopener,noreferrer');
+                       }}
                      >
                        <ExternalLink className="w-4 h-4 mr-2" />
                        Live Demo
