@@ -865,19 +865,17 @@ const Portfolio = () => {
                        size="sm" 
                        variant="outline" 
                        className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors flex-1"
-                       onClick={(e) => {
-                         console.log('Button clicked!');
-                         console.log('Project:', project);
-                         console.log('Project link:', project.link);
-                         e.preventDefault();
-                         e.stopPropagation();
-                         
-                         // Direct approach
-                         window.location.href = project.link;
-                       }}
+                       asChild
                      >
-                       <ExternalLink className="w-4 h-4 mr-2" />
-                       Live Demo
+                       <a 
+                         href={project.link} 
+                         target="_blank" 
+                         rel="noopener noreferrer"
+                         className="flex items-center justify-center"
+                       >
+                         <ExternalLink className="w-4 h-4 mr-2" />
+                         Live Demo
+                       </a>
                      </Button>
                    </div>
                 </CardContent>
