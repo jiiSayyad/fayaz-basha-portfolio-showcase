@@ -866,20 +866,14 @@ const Portfolio = () => {
                        variant="outline" 
                        className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors flex-1"
                        onClick={(e) => {
+                         console.log('Button clicked!');
+                         console.log('Project:', project);
+                         console.log('Project link:', project.link);
                          e.preventDefault();
                          e.stopPropagation();
-                         const url = project.link;
-                         console.log('Opening URL:', url);
-                         try {
-                           const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
-                           if (!newWindow) {
-                             // Fallback if popup is blocked
-                             window.location.href = url;
-                           }
-                         } catch (error) {
-                           console.error('Error opening URL:', error);
-                           window.location.href = url;
-                         }
+                         
+                         // Direct approach
+                         window.location.href = project.link;
                        }}
                      >
                        <ExternalLink className="w-4 h-4 mr-2" />
