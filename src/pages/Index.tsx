@@ -861,22 +861,21 @@ const Portfolio = () => {
                     ))}
                   </div>
                    <div className="flex gap-3">
-                     <Button 
-                       size="sm" 
-                       variant="outline" 
-                       className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors flex-1"
-                       asChild
+                     <a 
+                       href={project.link} 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       className="flex-1"
                      >
-                       <a 
-                         href={project.link} 
-                         target="_blank" 
-                         rel="noopener noreferrer"
-                         className="flex items-center justify-center"
+                       <Button 
+                         size="sm" 
+                         variant="outline" 
+                         className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
                        >
                          <ExternalLink className="w-4 h-4 mr-2" />
                          Live Demo
-                       </a>
-                     </Button>
+                       </Button>
+                     </a>
                    </div>
                 </CardContent>
               </Card>
