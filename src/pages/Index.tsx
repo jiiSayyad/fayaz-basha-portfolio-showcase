@@ -640,78 +640,109 @@ const Portfolio = () => {
             </p>
           </div>
           
-          {/* Skills Categories Grid */}
-          <div className="space-y-12">
+          {/* Hexagonal Skills Grid Layout */}
+          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
             {Object.entries(skillCategories).map(([category, skills], categoryIndex) => (
-              <div key={category} className="animate-fade-in" style={{ animationDelay: `${categoryIndex * 200}ms` }}>
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                    {category}
-                  </h3>
-                  <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
-                </div>
-                
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {skills.map((skill, index) => (
-                    <div 
-                      key={index} 
-                      className="group cursor-pointer animate-scale-in" 
-                      style={{ animationDelay: `${(categoryIndex * skills.length + index) * 100}ms` }}
-                    >
-                      <Card className="relative overflow-hidden bg-background/60 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2 group-hover:bg-gradient-to-br group-hover:from-background group-hover:to-primary/5">
-                        {/* Animated Border */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
-                        
-                        <CardContent className="relative p-6">
-                          <div className="flex items-center justify-between mb-4">
-                            <div className="flex items-center space-x-3">
-                              <div className="relative p-3 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl group-hover:from-primary/30 group-hover:to-accent/30 transition-all duration-300 group-hover:scale-110">
-                                <skill.icon className="h-5 w-5 text-primary group-hover:animate-bounce" />
-                                {/* Glow effect */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-accent/40 rounded-xl blur opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
-                              </div>
-                              <div>
-                                <span className="font-bold text-lg group-hover:text-primary transition-colors duration-300">{skill.name}</span>
-                                <p className="text-sm text-muted-foreground group-hover:text-accent transition-colors duration-300">{skill.description}</p>
-                              </div>
-                            </div>
-                            <div className="text-right">
-                              <span className="text-xl font-bold text-primary group-hover:scale-110 inline-block transition-transform duration-300">{skill.level}%</span>
-                            </div>
-                          </div>
-                          
-                          {/* Enhanced Animated Progress Bar */}
-                          <div className="relative">
-                            <div className="h-2 bg-muted/50 rounded-full overflow-hidden">
-                              <div 
-                                className="h-full bg-gradient-to-r from-primary via-accent to-primary rounded-full transition-all duration-1500 ease-out group-hover:shadow-lg group-hover:shadow-primary/30 relative overflow-hidden"
-                                style={{ 
-                                  width: `${skill.level}%`,
-                                  backgroundSize: '200% 100%',
-                                  animation: 'gradient 2s ease-in-out infinite'
-                                }}
-                              >
-                                {/* Animated shine effect */}
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 animate-shine"></div>
-                              </div>
-                            </div>
-                            {/* Floating percentage indicator */}
-                            <div 
-                              className="absolute top-0 h-2 w-1 bg-primary/60 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                              style={{ left: `${skill.level}%`, transform: 'translateX(-50%)' }}
-                            >
-                              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-xs font-bold text-primary bg-background/80 px-2 py-1 rounded shadow-lg">
-                                {skill.level}%
-                              </div>
-                            </div>
-                          </div>
-                        </CardContent>
-                        
-                        {/* Hover overlay effect */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-                      </Card>
+              <div 
+                key={category} 
+                className="group relative"
+                style={{ animationDelay: `${categoryIndex * 200}ms` }}
+              >
+                {/* Category Container */}
+                <div className="relative">
+                  {/* Hexagonal Background */}
+                  <div className="relative bg-gradient-to-br from-card/90 to-card/50 backdrop-blur-sm rounded-3xl p-8 border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-3 glow-card">
+                    
+                    {/* Category Header */}
+                    <div className="text-center mb-8">
+                      <div className="relative inline-block">
+                        <div className="w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
+                          <Code className="w-10 h-10 text-white" />
+                        </div>
+                        {/* Floating particles */}
+                        <div className="absolute -top-2 -right-2 w-4 h-4 bg-accent rounded-full animate-ping opacity-75"></div>
+                        <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-2">
+                        {category}
+                      </h3>
+                      <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
                     </div>
-                  ))}
+                    
+                    {/* Skills Hexagon Grid */}
+                    <div className="space-y-6">
+                      {skills.map((skill, skillIndex) => {
+                        const IconComponent = skill.icon;
+                        return (
+                          <div 
+                            key={skill.name} 
+                            className="group/skill relative"
+                            style={{ animationDelay: `${(categoryIndex * skills.length + skillIndex) * 150}ms` }}
+                          >
+                            {/* Skill Hexagon */}
+                            <div className="flex items-center gap-4 p-4 rounded-2xl hover:bg-primary/5 transition-all duration-300 cursor-pointer">
+                              {/* Skill Icon Hexagon */}
+                              <div className="relative">
+                                <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl flex items-center justify-center group-hover/skill:from-primary/40 group-hover/skill:to-accent/40 group-hover/skill:scale-110 group-hover/skill:rotate-12 transition-all duration-300 shadow-md">
+                                  <IconComponent className="w-6 h-6 text-primary" />
+                                </div>
+                                {/* Skill level indicator */}
+                                <div className="absolute -top-1 -right-1 w-6 h-6 bg-gradient-to-br from-accent to-primary rounded-full flex items-center justify-center text-xs font-bold text-white shadow-lg">
+                                  {Math.round(skill.level / 20)}
+                                </div>
+                              </div>
+                              
+                              {/* Skill Details */}
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center justify-between mb-2">
+                                  <h4 className="font-semibold text-foreground group-hover/skill:text-primary transition-colors truncate">
+                                    {skill.name}
+                                  </h4>
+                                  <span className="text-sm font-bold text-primary">
+                                    {skill.level}%
+                                  </span>
+                                </div>
+                                
+                                {/* Animated Progress Ring */}
+                                <div className="relative">
+                                  <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
+                                    <div 
+                                      className="h-full bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-1000 ease-out skill-progress relative"
+                                      style={{ 
+                                        width: `${skill.level}%`,
+                                        animationDelay: `${(categoryIndex * skills.length + skillIndex) * 200}ms`
+                                      }}
+                                    >
+                                      <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent rounded-full animate-pulse"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                                {/* Skill Badge */}
+                                <div className="mt-2">
+                                  <Badge 
+                                    variant="secondary" 
+                                    className="text-xs px-2 py-1 bg-primary/10 text-primary border-primary/20 group-hover/skill:bg-primary/20 transition-colors"
+                                  >
+                                    {skill.description}
+                                  </Badge>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    {/* Decorative Elements */}
+                    <div className="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute -bottom-2 -left-2 w-12 h-12 bg-gradient-to-tr from-accent/20 to-primary/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  </div>
+
+                  {/* Category Number Badge */}
+                  <div className="absolute -top-4 -left-4 w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg z-10">
+                    {categoryIndex + 1}
+                  </div>
                 </div>
               </div>
             ))}
