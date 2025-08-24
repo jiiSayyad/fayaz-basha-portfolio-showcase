@@ -80,14 +80,29 @@ const Portfolio = () => {
     }
   };
 
-  const skills = [
-    { name: 'Java', level: 85, icon: Code },
-    { name: 'JavaScript', level: 80, icon: Code },
-    { name: 'HTML/CSS', level: 90, icon: Globe },
-    { name: 'Python', level: 60, icon: Code },
-    { name: 'MySQL', level: 75, icon: Database },
-    { name: 'React', level: 70, icon: Code },
-  ];
+  const skillCategories = {
+    "Programming Languages": [
+      { name: 'Java', level: 85, icon: Code, description: 'Advanced' },
+      { name: 'JavaScript', level: 80, icon: Code, description: 'Advanced' },
+      { name: 'Python', level: 65, icon: Code, description: 'Intermediate' },
+    ],
+    "Web Technologies": [
+      { name: 'HTML/CSS', level: 90, icon: Globe, description: 'Expert' },
+      { name: 'RESTful APIs', level: 75, icon: Database, description: 'Advanced' },
+      { name: 'JSP/Servlets', level: 70, icon: Code, description: 'Advanced' },
+    ],
+    "Frameworks & Libraries": [
+      { name: 'React', level: 75, icon: Code, description: 'Advanced' },
+      { name: 'Redux', level: 65, icon: Code, description: 'Intermediate' },
+      { name: 'Spring Boot', level: 70, icon: Code, description: 'Advanced' },
+    ],
+    "Tools & Platforms": [
+      { name: 'Git', level: 80, icon: Code, description: 'Advanced' },
+      { name: 'VS Code', level: 85, icon: Code, description: 'Expert' },
+      { name: 'Eclipse', level: 75, icon: Code, description: 'Advanced' },
+      { name: 'GitHub', level: 80, icon: Code, description: 'Advanced' },
+    ]
+  };
 
   const experiences = [
     {
@@ -600,78 +615,125 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Skills Section */}
+      {/* Enhanced Skills Section */}
       <section id="skills" className="py-24 relative overflow-hidden">
-        {/* Background Elements */}
+        {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 right-20 w-64 h-64 bg-accent/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-primary/5 to-accent/5 rounded-full blur-3xl animate-spin" style={{ animationDuration: '20s' }}></div>
         </div>
         
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-20 fade-in-up">
+          <div className="text-center mb-20 animate-fade-in">
             <div className="inline-block mb-4">
-              <Badge variant="outline" className="px-6 py-2 text-sm font-medium border-primary/30">
+              <Badge variant="outline" className="px-6 py-2 text-sm font-medium border-primary/30 bg-primary/5 animate-pulse">
                 💻 Technical Skills
               </Badge>
             </div>
-            <h2 className="section-title mb-6">Skills & Technologies</h2>
+            <h2 className="section-title mb-6 hover:scale-105 transition-transform duration-300">Skills & Technologies</h2>
             <p className="section-subtitle max-w-3xl mx-auto">
-              Proficient in modern development technologies and frameworks, 
-              constantly expanding my technical expertise to stay current with industry standards.
+              Programming Languages: <span className="text-primary font-semibold">Java, JavaScript, Python (Intermediate)</span><br/>
+              Web Technologies: <span className="text-primary font-semibold">HTML, CSS, RESTful APIs, JSP/Servlets</span><br/>
+              Frameworks & Libraries: <span className="text-primary font-semibold">React, Redux, Spring Boot</span><br/>
+              Tools & Platforms: <span className="text-primary font-semibold">Git, MS Office, Visual Studio Code, Eclipse, GitHub</span>
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {skills.map((skill, index) => (
-              <div key={index} className="fade-in-up group">
-                <Card className="card-enhanced bg-background/50 backdrop-blur-sm">
-                  <CardContent className="p-8">
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="flex items-center space-x-4">
-                        <div className="p-3 bg-primary/20 rounded-xl group-hover:bg-primary/30 transition-colors">
-                          <skill.icon className="h-6 w-6 text-primary" />
-                        </div>
-                        <div>
-                          <span className="font-bold text-lg">{skill.name}</span>
-                          <p className="text-sm text-muted-foreground">Professional Level</p>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <span className="text-2xl font-bold text-primary">{skill.level}%</span>
-                      </div>
+          {/* Skills Categories Grid */}
+          <div className="space-y-12">
+            {Object.entries(skillCategories).map(([category, skills], categoryIndex) => (
+              <div key={category} className="animate-fade-in" style={{ animationDelay: `${categoryIndex * 200}ms` }}>
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    {category}
+                  </h3>
+                  <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+                </div>
+                
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {skills.map((skill, index) => (
+                    <div 
+                      key={index} 
+                      className="group cursor-pointer animate-scale-in" 
+                      style={{ animationDelay: `${(categoryIndex * skills.length + index) * 100}ms` }}
+                    >
+                      <Card className="relative overflow-hidden bg-background/60 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2 group-hover:bg-gradient-to-br group-hover:from-background group-hover:to-primary/5">
+                        {/* Animated Border */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
+                        
+                        <CardContent className="relative p-6">
+                          <div className="flex items-center justify-between mb-4">
+                            <div className="flex items-center space-x-3">
+                              <div className="relative p-3 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl group-hover:from-primary/30 group-hover:to-accent/30 transition-all duration-300 group-hover:scale-110">
+                                <skill.icon className="h-5 w-5 text-primary group-hover:animate-bounce" />
+                                {/* Glow effect */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-accent/40 rounded-xl blur opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+                              </div>
+                              <div>
+                                <span className="font-bold text-lg group-hover:text-primary transition-colors duration-300">{skill.name}</span>
+                                <p className="text-sm text-muted-foreground group-hover:text-accent transition-colors duration-300">{skill.description}</p>
+                              </div>
+                            </div>
+                            <div className="text-right">
+                              <span className="text-xl font-bold text-primary group-hover:scale-110 inline-block transition-transform duration-300">{skill.level}%</span>
+                            </div>
+                          </div>
+                          
+                          {/* Enhanced Animated Progress Bar */}
+                          <div className="relative">
+                            <div className="h-2 bg-muted/50 rounded-full overflow-hidden">
+                              <div 
+                                className="h-full bg-gradient-to-r from-primary via-accent to-primary rounded-full transition-all duration-1500 ease-out group-hover:shadow-lg group-hover:shadow-primary/30 relative overflow-hidden"
+                                style={{ 
+                                  width: `${skill.level}%`,
+                                  backgroundSize: '200% 100%',
+                                  animation: 'gradient 2s ease-in-out infinite'
+                                }}
+                              >
+                                {/* Animated shine effect */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 animate-shine"></div>
+                              </div>
+                            </div>
+                            {/* Floating percentage indicator */}
+                            <div 
+                              className="absolute top-0 h-2 w-1 bg-primary/60 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                              style={{ left: `${skill.level}%`, transform: 'translateX(-50%)' }}
+                            >
+                              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-xs font-bold text-primary bg-background/80 px-2 py-1 rounded shadow-lg">
+                                {skill.level}%
+                              </div>
+                            </div>
+                          </div>
+                        </CardContent>
+                        
+                        {/* Hover overlay effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                      </Card>
                     </div>
-                    
-                    {/* Enhanced Progress Bar */}
-                    <div className="relative">
-                      <div className="h-3 bg-muted rounded-full overflow-hidden">
-                        <div 
-                          className="h-full bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-1000 ease-out"
-                          style={{ width: `${skill.level}%` }}
-                        ></div>
-                      </div>
-                      <div className="flex justify-between text-xs text-muted-foreground mt-2">
-                        <span>Beginner</span>
-                        <span>Expert</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
           
-          {/* Additional Skills Tags */}
-          <div className="mt-16 text-center fade-in-up">
-            <h3 className="text-xl font-semibold mb-6">Additional Technologies</h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {['Spring Boot', 'JSP/Servlets', 'Bootstrap', 'Git', 'VS Code', 'Eclipse', 'Responsive Design', 'API Integration'].map((tech, index) => (
+          {/* Enhanced Additional Tools Section */}
+          <div className="mt-20 text-center animate-fade-in" style={{ animationDelay: '800ms' }}>
+            <div className="mb-8">
+              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Development Tools & Platforms
+              </h3>
+              <div className="w-32 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4">
+              {['MS Office', 'Visual Studio Code', 'Eclipse IDE', 'GitHub', 'Responsive Design', 'API Integration', 'Version Control', 'Database Management'].map((tech, index) => (
                 <Badge 
                   key={index} 
                   variant="outline" 
-                  className="px-4 py-2 text-sm font-medium hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
+                  className="px-6 py-3 text-sm font-medium border-primary/30 bg-background/50 backdrop-blur-sm hover:bg-gradient-to-r hover:from-primary/10 hover:to-accent/10 hover:border-primary/50 hover:scale-110 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 cursor-pointer group"
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  {tech}
+                  <span className="group-hover:text-primary transition-colors duration-300">{tech}</span>
                 </Badge>
               ))}
             </div>
