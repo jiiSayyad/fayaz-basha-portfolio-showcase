@@ -748,27 +748,6 @@ const Portfolio = () => {
             ))}
           </div>
           
-          {/* Enhanced Additional Tools Section */}
-          <div className="mt-20 text-center animate-fade-in" style={{ animationDelay: '800ms' }}>
-            <div className="mb-8">
-              <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Development Tools & Platforms
-              </h3>
-              <div className="w-32 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
-            </div>
-            <div className="flex flex-wrap justify-center gap-4">
-              {['MS Office', 'Visual Studio Code', 'Eclipse IDE', 'GitHub', 'Responsive Design', 'API Integration', 'Version Control', 'Database Management'].map((tech, index) => (
-                <Badge 
-                  key={index} 
-                  variant="outline" 
-                  className="px-6 py-3 text-sm font-medium border-primary/30 bg-background/50 backdrop-blur-sm hover:bg-gradient-to-r hover:from-primary/10 hover:to-accent/10 hover:border-primary/50 hover:scale-110 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 cursor-pointer group"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <span className="group-hover:text-primary transition-colors duration-300">{tech}</span>
-                </Badge>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
