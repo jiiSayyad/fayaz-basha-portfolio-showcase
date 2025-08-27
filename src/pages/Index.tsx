@@ -168,14 +168,16 @@ const Portfolio = () => {
       title: 'Tech Academic Toolkit',
       description: 'A comprehensive PDF resource website built with HTML, CSS, and JavaScript. Features study materials, video tutorials, and coding platform integrations.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
-      link: 'https://sayyadfayazbasha.github.io/Tech-Academic-Toolkit/',
+      demoLink: 'https://sayyadfayazbasha.github.io/Tech-Academic-Toolkit/',
+      codeLink: 'https://github.com/SAYYADFAYAZBASHA/Tech-Academic-Toolkit',
       image: techToolkitImage,
     },
     {
       title: 'TechMart E-commerce Application',
       description: 'Full-stack e-commerce application with user management, product catalog, and admin dashboard. Built using Java, JSP/Servlets, and MySQL.',
       technologies: ['Java', 'JSP/Servlets', 'MySQL', 'Bootstrap'],
-      link: 'https://sayyadfayazbasha.github.io/TechMart-E-commerce-Application-/',
+      demoLink: 'https://sayyadfayazbasha.github.io/TechMart-E-commerce-Application-/',
+      codeLink: 'https://github.com/SAYYADFAYAZBASHA/TechMart-E-commerce-Application-',
       image: techmartImage,
     },
   ];
@@ -935,12 +937,21 @@ const Portfolio = () => {
                    <div className="flex gap-3">
                      <Button 
                        size="sm" 
-                       variant="outline" 
-                       className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors cursor-pointer"
-                       onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
+                       variant="default" 
+                       className="flex-1 group"
+                       onClick={() => window.open(project.demoLink, '_blank', 'noopener,noreferrer')}
                      >
                        <ExternalLink className="w-4 h-4 mr-2" />
                        Live Demo
+                     </Button>
+                     <Button 
+                       size="sm" 
+                       variant="outline" 
+                       className="flex-1 group"
+                       onClick={() => window.open(project.codeLink, '_blank', 'noopener,noreferrer')}
+                     >
+                       <Github className="w-4 h-4 mr-2" />
+                       View Code
                      </Button>
                    </div>
                 </CardContent>
