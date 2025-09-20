@@ -938,8 +938,7 @@ const Portfolio = () => {
                     <Button 
                       size="sm" 
                       variant="default" 
-                      className="w-full hover:scale-105 transition-all duration-200"
-                      onClick={() => window.open(project.demoLink, '_blank', 'noopener,noreferrer')}
+                      className="w-full"
                     >
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Live Demo
