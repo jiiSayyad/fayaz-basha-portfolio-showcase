@@ -934,6 +934,17 @@ const Portfolio = () => {
                       </Badge>
                     ))}
                   </div>
+                  <div className="mt-4">
+                    <Button 
+                      size="sm" 
+                      variant="default" 
+                      className="w-full hover:scale-105 transition-all duration-200"
+                      onClick={() => window.open(project.demoLink, '_blank', 'noopener,noreferrer')}
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Live Demo
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
