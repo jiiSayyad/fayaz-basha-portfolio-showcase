@@ -938,7 +938,7 @@ const Portfolio = () => {
                      <Button 
                        size="sm" 
                        variant="default" 
-                       className="flex-1 group"
+                       className="flex-1 hover:scale-105 transition-all duration-200"
                        onClick={() => window.open(project.demoLink, '_blank', 'noopener,noreferrer')}
                      >
                        <ExternalLink className="w-4 h-4 mr-2" />
@@ -947,7 +947,7 @@ const Portfolio = () => {
                      <Button 
                        size="sm" 
                        variant="outline" 
-                       className="flex-1 group"
+                       className="flex-1 hover:scale-105 hover:bg-primary hover:text-primary-foreground transition-all duration-200"
                        onClick={() => window.open(project.codeLink, '_blank', 'noopener,noreferrer')}
                      >
                        <Github className="w-4 h-4 mr-2" />
