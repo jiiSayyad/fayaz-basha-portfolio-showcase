@@ -21,7 +21,7 @@ const projects = [
     title: "TechMart E-commerce",
     description: "A modern e-commerce platform for technology products with advanced filtering, shopping cart functionality, user authentication, and payment integration for seamless online shopping.",
     technologies: ["React", "Node.js", "MongoDB", "Express", "JWT", "Stripe"],
-    image: "https://i.postimg.cc/XYw1mCQs/tech-toolkit-preview.png", 
+    image: "https://i.postimg.cc/d3bnSsdM/techmart-preview.png",
     demoLink: "https://sayyadfayazbasha.github.io/TechMart-E-commerce-Application-/",
     category: "E-commerce",
     year: "2024",
