@@ -11,7 +11,7 @@ const projects = [
     title: "Tech Academic Toolkit",
     description: "A comprehensive academic toolkit designed for technology students, featuring study materials, project templates, and interactive learning resources to enhance the educational experience.",
     technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Responsive Design"],
-    image: "/src/assets/tech-toolkit-preview.png",
+    image: "https://i.postimg.cc/XYw1mCQs/tech-toolkit-preview.png",
     demoLink: "https://sayyadfayazbasha.github.io/Tech-Academic-Toolkit/",
     category: "Educational",
     year: "2024",
