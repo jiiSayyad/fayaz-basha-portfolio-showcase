@@ -319,7 +319,7 @@ const Portfolio = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-accent/20"></div>
         <div 
