@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowDown, Download, Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Code, Database, Globe, Smartphone, Award, Calendar, GraduationCap, Building, CheckCircle, Star } from 'lucide-react';
+import { ArrowDown, Download, Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Code, Database, Globe, Smartphone, Award, Calendar, GraduationCap, Building, CheckCircle, Star, Palette, Image, PenTool, Share2, Video, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -96,6 +96,18 @@ const Portfolio = () => {
       { name: 'React', level: 75, icon: Code, description: 'Advanced' },
       { name: 'Redux', level: 65, icon: Code, description: 'Intermediate' },
       { name: 'Spring Boot', level: 70, icon: Code, description: 'Advanced' },
+    ],
+    "Design & Creative": [
+      { name: 'Adobe Photoshop', level: 80, icon: Palette, description: 'Advanced' },
+      { name: 'Canva', level: 85, icon: Image, description: 'Expert' },
+      { name: 'UI/UX Design', level: 75, icon: Smartphone, description: 'Advanced' },
+      { name: 'Graphic Design', level: 80, icon: Palette, description: 'Advanced' },
+    ],
+    "Content Creation": [
+      { name: 'Content Writing', level: 85, icon: PenTool, description: 'Expert' },
+      { name: 'Social Media Management', level: 80, icon: Share2, description: 'Advanced' },
+      { name: 'Video Editing', level: 70, icon: Video, description: 'Intermediate' },
+      { name: 'Digital Marketing', level: 75, icon: TrendingUp, description: 'Advanced' },
     ],
     "Tools & Platforms": [
       { name: 'Git', level: 80, icon: Code, description: 'Advanced' },
