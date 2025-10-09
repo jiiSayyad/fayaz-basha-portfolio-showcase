@@ -80,8 +80,8 @@ export const ProjectSection = () => {
           onCategoryChange={setActiveCategory}
         />
         
-        {/* Projects Grid with Staggered Animation */}
-        <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto mb-16">
+        {/* Projects List with Staggered Animation */}
+        <div className="flex flex-col gap-8 max-w-4xl mx-auto mb-16">
           {filteredProjects.map((project, index) => (
             <div 
               key={`${project.title}-${activeCategory}`}
