@@ -426,7 +426,7 @@ const Portfolio = () => {
               <Button 
                 size="lg"
                 className="btn-enhanced group relative overflow-hidden px-8 py-4 text-lg font-semibold"
-                onClick={() => window.open('https://i.postimg.cc/1XDhXssS/s-5.png', '_blank')}
+                onClick={() => window.open('/SAYYAD_FAYAZ_BASHA_RESUME.pdf', '_blank')}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-glow to-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 <Download className="mr-3 h-5 w-5 relative z-10 group-hover:animate-bounce" />
