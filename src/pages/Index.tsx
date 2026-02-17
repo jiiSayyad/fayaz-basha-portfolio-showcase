@@ -94,8 +94,9 @@ const Portfolio = () => {
     ],
     "Frameworks & Libraries": [
       { name: 'React', level: 75, icon: Code, description: 'Advanced' },
-      { name: 'Redux', level: 65, icon: Code, description: 'Intermediate' },
       { name: 'Spring Boot', level: 70, icon: Code, description: 'Advanced' },
+      { name: 'Hibernate', level: 70, icon: Code, description: 'Advanced' },
+      { name: 'JDBC', level: 70, icon: Code, description: 'Advanced' },
     ],
     "Design & Creative": [
       { name: 'Adobe Photoshop', level: 80, icon: Palette, description: 'Advanced' },
@@ -118,6 +119,14 @@ const Portfolio = () => {
   };
 
   const experiences = [
+    {
+      title: 'Java Full Stack Developer',
+      company: 'TAP Academy',
+      period: 'Jan 2026 – Present',
+      description: 'Implemented 5+ full-stack applications using Java, Spring Boot, Hibernate, MySQL, REST APIs, and responsive React components. Enhanced backend modules to implement secure authentication and improve page load speed.',
+      icon: Building,
+      certificateUrl: '',
+    },
     {
       title: 'Artificial Intelligence Machine Learning Intern',
       company: 'SmartBridge',
@@ -178,17 +187,25 @@ const Portfolio = () => {
 
   const projects = [
     {
+      title: 'Event Management System',
+      description: 'A complete Event Management System with 100+ event listings, budget estimation, decoration layouts, search and multi-layer filtering to categorize listings.',
+      technologies: ['React.js', 'Tailwind CSS', 'Node.js', 'Express', 'MySQL'],
+      demoLink: '',
+      codeLink: 'https://github.com/SAYYADFAYAZBASHA',
+      image: techToolkitImage,
+    },
+    {
       title: 'Tech Academic Toolkit',
-      description: 'A comprehensive PDF resource website built with HTML, CSS, and JavaScript. Features study materials, video tutorials, and coding platform integrations.',
-      technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
+      description: 'A comprehensive resource website for students providing 300+ study materials, YouTube channels, practice challenges, and interview guides.',
+      technologies: ['React.js', 'Tailwind CSS', 'JavaScript', 'HTML5', 'CSS3'],
       demoLink: 'https://sayyadfayazbasha.github.io/Tech-Academic-Toolkit/',
       codeLink: 'https://github.com/SAYYADFAYAZBASHA/Tech-Academic-Toolkit',
       image: techToolkitImage,
     },
     {
       title: 'TechMart E-commerce Application',
-      description: 'Full-stack e-commerce application with user management, product catalog, and admin dashboard. Built using Java, JSP/Servlets, and MySQL.',
-      technologies: ['Java', 'JSP/Servlets', 'MySQL', 'Bootstrap'],
+      description: 'Full-stack e-commerce digital marketplace with user registration, 50+ product shopping cart, order placement, and admin panel.',
+      technologies: ['Java', 'JSP', 'Servlets', 'JDBC', 'Hibernate', 'MySQL'],
       demoLink: 'https://sayyadfayazbasha.github.io/TechMart-E-commerce-Application-/',
       codeLink: 'https://github.com/SAYYADFAYAZBASHA/TechMart-E-commerce-Application-',
       image: techmartImage,
@@ -502,9 +519,10 @@ const Portfolio = () => {
                       <div>
                         <h3 className="text-2xl font-bold mb-4 gradient-text">Hi there! 👋</h3>
                         <p className="text-lg leading-relaxed text-muted-foreground">
-                          I'm <span className="text-primary font-semibold">Sayyad Fayaz Basha</span>, a Computer Science Engineering student at 
-                          Sri Venkateswara Institute of Technology with a <span className="text-primary font-semibold">CGPA of 8.8</span>. 
-                          I am passionate about Java full stack development, blending strong front-end design with robust backend logic.
+                          I'm <span className="text-primary font-semibold">Sayyad Fayaz Basha</span>, a Full Stack Software Engineer specializing in 
+                          Java, Spring Boot, and React.js. A Computer Science graduate from 
+                          Sri Venkateswara Institute of Technology with a <span className="text-primary font-semibold">CGPA of 8.8</span>, 
+                          possessing technical expertise in Data Structures, Algorithms, Cloud Computing, and OOPS.
                         </p>
                       </div>
                       
@@ -578,7 +596,7 @@ const Portfolio = () => {
                             </Badge>
                           </div>
                           <p className="text-primary font-medium mb-1">SVIT, Anantapur</p>
-                          <p className="text-sm text-muted-foreground">2022 – Present</p>
+                          <p className="text-sm text-muted-foreground">2022 – 2026</p>
                         </CardContent>
                       </Card>
                     </div>
@@ -650,8 +668,8 @@ const Portfolio = () => {
             <p className="section-subtitle max-w-3xl mx-auto">
               Programming Languages: <span className="text-primary font-semibold">Java, JavaScript, Python (Intermediate)</span><br/>
               Web Technologies: <span className="text-primary font-semibold">HTML, CSS, RESTful APIs, JSP/Servlets</span><br/>
-              Frameworks & Libraries: <span className="text-primary font-semibold">React, Redux, Spring Boot</span><br/>
-              Tools & Platforms: <span className="text-primary font-semibold">Git, MS Office, Visual Studio Code, Eclipse, GitHub</span>
+              Frameworks & Libraries: <span className="text-primary font-semibold">React, Spring Boot, Hibernate, JDBC</span><br/>
+              Tools & Platforms: <span className="text-primary font-semibold">Git, MySQL, MS Office, VS Code, Eclipse, GitHub</span>
             </p>
           </div>
           
