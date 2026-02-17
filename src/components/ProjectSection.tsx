@@ -8,24 +8,34 @@ import { ProjectFilter } from "./ProjectFilter";
 // Project data with enhanced structure
 const projects = [
   {
+    title: "Event Management System",
+    description: "A complete Event Management System with 100+ event listings, pages, budget estimation, decoration layouts, and interactive elements with search and multi-layer filtering to categorize listings.",
+    technologies: ["React.js", "Tailwind CSS", "Node.js", "Express", "MySQL"],
+    image: "https://i.postimg.cc/XYw1mCQs/tech-toolkit-preview.png",
+    demoLink: "",
+    category: "Web Application",
+    year: "2025",
+    features: ["100+ Event Listings", "Budget Estimation", "Decoration Layouts", "Multi-layer Filtering"]
+  },
+  {
     title: "Tech Academic Toolkit",
-    description: "A comprehensive academic toolkit designed for technology students, featuring study materials, project templates, and interactive learning resources to enhance the educational experience.",
-    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Responsive Design"],
+    description: "A comprehensive resource website for students providing 300+ study materials, YouTube channels, practice challenges, and interview guides for technology students.",
+    technologies: ["React.js", "Tailwind CSS", "JavaScript", "HTML5", "CSS3", "UI Design"],
     image: "https://i.postimg.cc/XYw1mCQs/tech-toolkit-preview.png",
     demoLink: "https://sayyadfayazbasha.github.io/Tech-Academic-Toolkit/",
     category: "Educational",
     year: "2024",
-    features: ["Study Materials", "Project Templates", "Interactive Learning", "Resource Library"]
+    features: ["300+ Study Materials", "YouTube Channels", "Practice Challenges", "Interview Guides"]
   },
   {
     title: "TechMart E-commerce",
-    description: "A modern e-commerce platform for technology products with advanced filtering, shopping cart functionality, user authentication, and payment integration for seamless online shopping.",
-    technologies: ["React", "Node.js", "MongoDB", "Express", "JWT", "Stripe"],
+    description: "A full-stack e-commerce digital marketplace web application with user registration, 50+ product shopping cart, order placement, and admin panel.",
+    technologies: ["Java", "JSP", "Servlets", "JDBC", "Hibernate", "MySQL", "HTML5"],
     image: "https://i.postimg.cc/d3bnSsdM/techmart-preview.png",
     demoLink: "https://sayyadfayazbasha.github.io/TechMart-E-commerce-Application-/",
     category: "E-commerce",
     year: "2024",
-    features: ["Product Catalog", "Shopping Cart", "User Auth", "Payment Gateway"]
+    features: ["User Registration", "50+ Product Cart", "Order Placement", "Admin Panel"]
   }
 ];
 
