@@ -993,11 +993,55 @@ const Portfolio = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-border">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-muted-foreground">
+      <footer className="border-t border-border bg-muted/20 py-12">
+        <div className="container mx-auto px-6">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="space-y-3">
+              <h3 className="text-lg font-semibold text-foreground">Contact Information</h3>
+              <div className="space-y-2 text-sm text-muted-foreground">
+                <p className="font-medium text-foreground">Sayyad Fayaz Basha</p>
+                <a href="tel:+919703029115" className="block hover:text-primary transition-colors">Phone: +91 9703029115</a>
+                <a href="mailto:fayaz1234basha@gmail.com" className="block hover:text-primary transition-colors">Email: fayaz1234basha@gmail.com</a>
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <h3 className="text-lg font-semibold text-foreground">Professional Profiles</h3>
+              <div className="space-y-2 text-sm text-muted-foreground">
+                {profileGroups.professional.map((link) => (
+                  <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="block hover:text-primary transition-colors">
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <h3 className="text-lg font-semibold text-foreground">Coding Profiles</h3>
+              <div className="space-y-2 text-sm text-muted-foreground">
+                {profileGroups.coding.map((link) => (
+                  <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="block hover:text-primary transition-colors">
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <h3 className="text-lg font-semibold text-foreground">Social Media</h3>
+              <div className="space-y-2 text-sm text-muted-foreground">
+                {profileGroups.social.map((link) => (
+                  <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="block hover:text-primary transition-colors">
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 border-t border-border pt-6 text-center text-sm text-muted-foreground">
             © 2025 Sayyad Fayaz Basha. Designed & Developed with ❤️
-          </p>
+          </div>
         </div>
       </footer>
     </div>
