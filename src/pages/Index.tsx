@@ -245,6 +245,30 @@ const Portfolio = () => {
     },
   ];
 
+  const profileGroups = {
+    professional: [
+      { label: 'GitHub', href: 'https://github.com/sayyadfayazbasha-developer' },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sayyadfayazbasha-developer/' },
+      { label: 'Portfolio', href: 'https://sayyad-fayaz-basha-showcase-portfolio.vercel.app/' },
+    ],
+    coding: [
+      { label: 'HackerRank', href: 'https://www.hackerrank.com/profile/fayaz1234basha' },
+      { label: 'CodeChef', href: 'https://www.codechef.com/users/fayaz1234basha' },
+      { label: 'LeetCode', href: 'https://leetcode.com/u/sayyad_fayaz_basha/' },
+    ],
+    projects: [
+      { label: 'Event Handler Pro Management', href: 'https://event-handler-pro-management.vercel.app/' },
+      { label: 'Tech Academic Toolkit', href: 'https://tech-academic-toolkit.vercel.app/' },
+      { label: 'Universal E Commerce Plaza', href: 'https://universal-e-commerce-plaza.vercel.app/' },
+    ],
+    social: [
+      { label: 'Instagram', href: 'https://www.instagram.com/sayyad_fayaz_basha/' },
+      { label: 'Twitter / X', href: 'https://x.com/FayazBasha0504' },
+      { label: 'Threads', href: 'https://www.threads.com/@sayyad_fayaz_basha' },
+      { label: 'Facebook', href: 'https://www.facebook.com/SayyadFayazBasha5/' },
+    ],
+  };
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -834,65 +858,71 @@ const Portfolio = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <div className="fade-in-up">
-              <h3 className="text-2xl font-semibold mb-6">Get In Touch</h3>
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                    <Phone className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-medium">Phone</p>
-                    <p className="text-muted-foreground">+91 9703029115</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                    <Mail className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-medium">Email</p>
-                    <p className="text-muted-foreground">fayaz1234basha@gmail.com</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                    <MapPin className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-medium">Location</p>
-                    <p className="text-muted-foreground">Dharmavaram, Andhra Pradesh</p>
+            <div className="fade-in-up space-y-8">
+              <div>
+                <h3 className="text-2xl font-semibold mb-6">Get In Touch</h3>
+                <div className="space-y-6">
+                  <a href="tel:+919703029115" className="flex items-center space-x-4 rounded-lg transition-colors hover:bg-muted/40 p-2 -m-2">
+                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                      <Phone className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-medium">Phone</p>
+                      <p className="text-muted-foreground">+91 9703029115</p>
+                    </div>
+                  </a>
+                  
+                  <a href="mailto:fayaz1234basha@gmail.com" className="flex items-center space-x-4 rounded-lg transition-colors hover:bg-muted/40 p-2 -m-2">
+                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                      <Mail className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-medium">Email</p>
+                      <p className="text-muted-foreground">fayaz1234basha@gmail.com</p>
+                    </div>
+                  </a>
+                  
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                      <MapPin className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-medium">Location</p>
+                      <p className="text-muted-foreground">Dharmavaram, Andhra Pradesh</p>
+                    </div>
                   </div>
                 </div>
               </div>
-              
-              <div className="flex space-x-4 mt-8">
-                <Button 
-                  variant="outline" 
-                  size="icon" 
-                  className="btn-outline-enhanced"
-                  onClick={() => window.open('https://github.com/sayyadfayazbasha-developer', '_blank')}
-                >
-                  <Github className="h-5 w-5" />
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="icon" 
-                  className="btn-outline-enhanced"
-                  onClick={() => window.open('https://www.linkedin.com/in/sayyadfayazbasha-developer/', '_blank')}
-                >
-                  <Linkedin className="h-5 w-5" />
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="icon" 
-                  className="btn-outline-enhanced"
-                  onClick={() => window.open('mailto:fayaz1234basha@gmail.com')}
-                >
-                  <Mail className="h-5 w-5" />
-                </Button>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {[
+                  { title: 'Professional Profiles', links: profileGroups.professional },
+                  { title: 'Coding Profiles', links: profileGroups.coding },
+                  { title: 'Project Links', links: profileGroups.projects },
+                  { title: 'Social Media', links: profileGroups.social },
+                ].map((group) => (
+                  <Card key={group.title} className="card-enhanced bg-card/80">
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-lg">{group.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <div className="space-y-2">
+                        {group.links.map((link) => (
+                          <a
+                            key={link.label}
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-between gap-3 rounded-lg border border-border/60 px-3 py-2 text-sm text-foreground transition-colors hover:bg-muted/40 hover:border-primary/30"
+                          >
+                            <span>{link.label}</span>
+                            <ExternalLink className="h-4 w-4 text-primary" />
+                          </a>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             </div>
             
