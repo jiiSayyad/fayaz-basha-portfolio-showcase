@@ -8,34 +8,34 @@ import { ProjectFilter } from "./ProjectFilter";
 // Project data with enhanced structure
 const projects = [
   {
-    title: "Event Management System",
-    description: "A complete Event Management System with 100+ event listings, pages, budget estimation, decoration layouts, and interactive elements with search and multi-layer filtering to categorize listings.",
+    title: "Event Handler Pro Management",
+    description: "A complete event management platform with event listings, planning workflows, budget support, decoration layouts, and interactive filtering for streamlined coordination.",
     technologies: ["React.js", "Tailwind CSS", "Node.js", "Express", "MySQL"],
     image: "https://i.postimg.cc/XYw1mCQs/tech-toolkit-preview.png",
-    demoLink: "",
+    demoLink: "https://event-handler-pro-management.vercel.app/",
     category: "Web Application",
     year: "2025",
-    features: ["100+ Event Listings", "Budget Estimation", "Decoration Layouts", "Multi-layer Filtering"]
+    features: ["Event Listings", "Budget Support", "Layout Planning", "Smart Filtering"]
   },
   {
     title: "Tech Academic Toolkit",
-    description: "A comprehensive resource website for students providing 300+ study materials, YouTube channels, practice challenges, and interview guides for technology students.",
+    description: "A comprehensive academic resource platform for students with study materials, coding practice, interview support, and curated learning content.",
     technologies: ["React.js", "Tailwind CSS", "JavaScript", "HTML5", "CSS3", "UI Design"],
     image: "https://i.postimg.cc/XYw1mCQs/tech-toolkit-preview.png",
-    demoLink: "https://sayyadfayazbasha.github.io/Tech-Academic-Toolkit/",
+    demoLink: "https://tech-academic-toolkit.vercel.app/",
     category: "Educational",
     year: "2024",
-    features: ["300+ Study Materials", "YouTube Channels", "Practice Challenges", "Interview Guides"]
+    features: ["Study Materials", "Coding Practice", "Interview Support", "Learning Resources"]
   },
   {
-    title: "TechMart E-commerce",
-    description: "A full-stack e-commerce digital marketplace web application with user registration, 50+ product shopping cart, order placement, and admin panel.",
+    title: "Universal E Commerce Plaza",
+    description: "A full-stack digital marketplace web application with shopping flows, product discovery, order processing, and scalable commerce features.",
     technologies: ["Java", "JSP", "Servlets", "JDBC", "Hibernate", "MySQL", "HTML5"],
     image: "https://i.postimg.cc/d3bnSsdM/techmart-preview.png",
-    demoLink: "https://sayyadfayazbasha.github.io/TechMart-E-commerce-Application-/",
+    demoLink: "https://universal-e-commerce-plaza.vercel.app/",
     category: "E-commerce",
     year: "2024",
-    features: ["User Registration", "50+ Product Cart", "Order Placement", "Admin Panel"]
+    features: ["Product Discovery", "Shopping Flow", "Order Processing", "Marketplace UX"]
   }
 ];
 
@@ -122,7 +122,7 @@ export const ProjectSection = () => {
             <Button 
               size="lg" 
               className="group bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 px-8"
-              onClick={() => window.open('https://github.com/SAYYADFAYAZBASHA', '_blank', 'noopener,noreferrer')}
+              onClick={() => window.open('https://github.com/sayyadfayazbasha-developer', '_blank', 'noopener,noreferrer')}
             >
               <Github className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" />
               View GitHub Profile
