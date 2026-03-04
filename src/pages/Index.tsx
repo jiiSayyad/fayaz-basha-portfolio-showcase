@@ -159,27 +159,27 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: 'Event Management System',
-      description: 'A complete Event Management System with 100+ event listings, budget estimation, decoration layouts, search and multi-layer filtering to categorize listings.',
+      title: 'Event Handler Pro Management',
+      description: 'A complete event management platform with event listings, planning flows, budget support, layouts, and interactive filtering for streamlined event coordination.',
       technologies: ['React.js', 'Tailwind CSS', 'Node.js', 'Express', 'MySQL'],
-      demoLink: '',
-      codeLink: 'https://github.com/SAYYADFAYAZBASHA',
+      demoLink: 'https://event-handler-pro-management.vercel.app/',
+      codeLink: 'https://github.com/sayyadfayazbasha-developer',
       image: techToolkitImage,
     },
     {
       title: 'Tech Academic Toolkit',
-      description: 'A comprehensive resource website for students providing 300+ study materials, YouTube channels, practice challenges, and interview guides.',
+      description: 'A comprehensive academic resource platform for students with study materials, coding practice, interview support, and curated learning content.',
       technologies: ['React.js', 'Tailwind CSS', 'JavaScript', 'HTML5', 'CSS3'],
-      demoLink: 'https://sayyadfayazbasha.github.io/Tech-Academic-Toolkit/',
-      codeLink: 'https://github.com/SAYYADFAYAZBASHA/Tech-Academic-Toolkit',
+      demoLink: 'https://tech-academic-toolkit.vercel.app/',
+      codeLink: 'https://github.com/sayyadfayazbasha-developer',
       image: techToolkitImage,
     },
     {
-      title: 'TechMart E-commerce Application',
-      description: 'Full-stack e-commerce digital marketplace with user registration, 50+ product shopping cart, order placement, and admin panel.',
+      title: 'Universal E Commerce Plaza',
+      description: 'A full-stack e-commerce marketplace with product browsing, shopping workflows, user-friendly purchasing flows, and scalable commerce features.',
       technologies: ['Java', 'JSP', 'Servlets', 'JDBC', 'Hibernate', 'MySQL'],
-      demoLink: 'https://sayyadfayazbasha.github.io/TechMart-E-commerce-Application-/',
-      codeLink: 'https://github.com/SAYYADFAYAZBASHA/TechMart-E-commerce-Application-',
+      demoLink: 'https://universal-e-commerce-plaza.vercel.app/',
+      codeLink: 'https://github.com/sayyadfayazbasha-developer',
       image: techmartImage,
     },
   ];
@@ -418,7 +418,7 @@ const Portfolio = () => {
             {/* Enhanced Social Links */}
             <div className="flex justify-center gap-6 mb-12">
               <a 
-                href="https://github.com/SAYYADFAYAZBASHA" 
+                href="https://github.com/sayyadfayazbasha-developer" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-link"
@@ -426,7 +426,7 @@ const Portfolio = () => {
                 <Github className="h-6 w-6 text-primary" />
               </a>
               <a 
-                href="https://www.linkedin.com/in/sayyadfayazbasha-9703029115-2003-developer/" 
+                href="https://www.linkedin.com/in/sayyadfayazbasha-developer/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-link"
@@ -873,7 +873,7 @@ const Portfolio = () => {
                   variant="outline" 
                   size="icon" 
                   className="btn-outline-enhanced"
-                  onClick={() => window.open('https://github.com/SAYYADFAYAZBASHA', '_blank')}
+                  onClick={() => window.open('https://github.com/sayyadfayazbasha-developer', '_blank')}
                 >
                   <Github className="h-5 w-5" />
                 </Button>
@@ -881,7 +881,7 @@ const Portfolio = () => {
                   variant="outline" 
                   size="icon" 
                   className="btn-outline-enhanced"
-                  onClick={() => window.open('https://www.linkedin.com/in/sayyadfayazbasha-9703029115-2003-developer/', '_blank')}
+                  onClick={() => window.open('https://www.linkedin.com/in/sayyadfayazbasha-developer/', '_blank')}
                 >
                   <Linkedin className="h-5 w-5" />
                 </Button>
