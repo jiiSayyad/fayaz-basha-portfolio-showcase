@@ -1,4 +1,5 @@
 import { useState } from "react";
+import eventHandlerImage from "@/assets/event-handler-preview.png";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, ArrowRight, Code2 } from "lucide-react";
@@ -11,7 +12,7 @@ const projects = [
     title: "Event Handler Pro Management",
     description: "A complete event management platform with event listings, planning workflows, budget support, decoration layouts, and interactive filtering for streamlined coordination.",
     technologies: ["React.js", "Tailwind CSS", "Node.js", "Express", "MySQL"],
-    image: "https://i.postimg.cc/XYw1mCQs/tech-toolkit-preview.png",
+    image: eventHandlerImage,
     demoLink: "https://event-handler-pro-management.vercel.app/",
     category: "Web Application",
     year: "2025",
