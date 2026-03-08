@@ -1088,8 +1088,6 @@ const Portfolio = () => {
           </div>
         </div>
       </footer>
-        </div>
-      </footer>
     </div>
   );
 };
