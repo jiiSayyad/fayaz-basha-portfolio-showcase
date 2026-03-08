@@ -762,18 +762,40 @@ const Portfolio = () => {
                               ))}
                             </div>
                             
-                            {/* View Certificate Button */}
-                            <div className="mt-6">
-                               <Button 
-                                size="sm" 
-                                variant="outline" 
-                                className="btn-outline-enhanced group relative overflow-hidden"
-                                onClick={() => window.open(exp.certificateUrl, '_blank')}
-                              >
-                                <ExternalLink className="w-4 h-4 mr-2 relative z-10 group-hover:animate-pulse" />
-                                <span className="relative z-10">View Certificate</span>
-                              </Button>
-                            </div>
+                            {/* Certificate Preview & Button */}
+                            {exp.certificateUrl && (
+                              <div className="mt-6 flex flex-col sm:flex-row items-start gap-4">
+                                <a href={exp.certificateUrl} target="_blank" rel="noopener noreferrer" className="block flex-shrink-0 group/cert">
+                                  <div className="relative w-32 h-20 rounded-lg overflow-hidden border border-border shadow-sm group-hover/cert:shadow-md group-hover/cert:border-primary/40 transition-all duration-300">
+                                    <img 
+                                      src={exp.certificateUrl} 
+                                      alt={`${exp.title} Certificate`} 
+                                      className="w-full h-full object-cover group-hover/cert:scale-110 transition-transform duration-300"
+                                      loading="lazy"
+                                    />
+                                    <div className="absolute inset-0 bg-background/60 flex items-center justify-center opacity-0 group-hover/cert:opacity-100 transition-opacity duration-300">
+                                      <ExternalLink className="w-5 h-5 text-primary" />
+                                    </div>
+                                  </div>
+                                </a>
+                                <Button 
+                                  size="sm" 
+                                  variant="outline" 
+                                  className="btn-outline-enhanced group relative overflow-hidden"
+                                  onClick={() => window.open(exp.certificateUrl, '_blank')}
+                                >
+                                  <ExternalLink className="w-4 h-4 mr-2 relative z-10 group-hover:animate-pulse" />
+                                  <span className="relative z-10">View Certificate</span>
+                                </Button>
+                              </div>
+                            )}
+                            {!exp.certificateUrl && (
+                              <div className="mt-6">
+                                <Badge variant="outline" className="text-xs text-muted-foreground">
+                                  Certificate pending
+                                </Badge>
+                              </div>
+                            )}
                           </CardContent>
                         </Card>
                       </div>
