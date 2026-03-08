@@ -920,7 +920,6 @@ const Portfolio = () => {
                 {[
                   { title: 'Professional Profiles', links: profileGroups.professional },
                   { title: 'Coding Profiles', links: profileGroups.coding },
-                  { title: 'Project Links', links: profileGroups.projects },
                   { title: 'Social Media', links: profileGroups.social },
                 ].map((group) => (
                   <Card key={group.title} className="card-enhanced bg-card/80">
@@ -1015,127 +1014,76 @@ const Portfolio = () => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-gradient-to-b from-background to-muted/30 py-16">
+      <footer className="border-t border-border bg-gradient-to-b from-background to-muted/20 py-16">
         <div className="container mx-auto px-6">
-          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-            {/* Contact Information */}
-            <div className="space-y-4">
-              <h3 className="flex items-center gap-2 text-lg font-semibold text-foreground">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
-                  <Mail className="h-4 w-4 text-primary" />
-                </div>
-                Contact Info
-              </h3>
-              <div className="space-y-3 text-sm">
-                <p className="font-medium text-foreground flex items-center gap-2">
-                  <User className="h-4 w-4 text-muted-foreground" />
-                  Sayyad Fayaz Basha
-                </p>
-                <a href="tel:+919703029115" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group">
-                  <Phone className="h-4 w-4 group-hover:text-primary transition-colors" />
-                  +91 9703029115
-                </a>
-                <a href="mailto:fayaz1234basha@gmail.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group">
-                  <Mail className="h-4 w-4 group-hover:text-primary transition-colors" />
-                  fayaz1234basha@gmail.com
-                </a>
-              </div>
+          {/* Top: Brand + Contact */}
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-12">
+            <div>
+              <h2 className="text-2xl font-bold gradient-text mb-2">Sayyad Fayaz Basha</h2>
+              <p className="text-muted-foreground text-sm max-w-md">
+                Java Full Stack Developer passionate about building scalable web applications and solving complex problems.
+              </p>
             </div>
-
-            {/* Professional Profiles */}
-            <div className="space-y-4">
-              <h3 className="flex items-center gap-2 text-lg font-semibold text-foreground">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
-                  <Briefcase className="h-4 w-4 text-primary" />
-                </div>
-                Professional
-              </h3>
-              <div className="space-y-3 text-sm">
-                <a href="https://github.com/sayyadfayazbasha-developer" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group">
-                  <Github className="h-4 w-4 group-hover:text-primary transition-colors" />
-                  GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/sayyadfayazbasha-developer/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group">
-                  <Linkedin className="h-4 w-4 group-hover:text-primary transition-colors" />
-                  LinkedIn
-                </a>
-                <a href="https://sayyad-fayaz-basha-showcase-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group">
-                  <Globe className="h-4 w-4 group-hover:text-primary transition-colors" />
-                  Portfolio
-                </a>
-              </div>
-            </div>
-
-            {/* Coding Platforms */}
-            <div className="space-y-4">
-              <h3 className="flex items-center gap-2 text-lg font-semibold text-foreground">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
-                  <Code className="h-4 w-4 text-primary" />
-                </div>
-                Coding Platforms
-              </h3>
-              <div className="space-y-3 text-sm">
-                <a href="https://www.hackerrank.com/profile/fayaz1234basha" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group">
-                  <Trophy className="h-4 w-4 group-hover:text-primary transition-colors" />
-                  HackerRank
-                </a>
-                <a href="https://www.codechef.com/users/fayaz1234basha" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group">
-                  <Award className="h-4 w-4 group-hover:text-primary transition-colors" />
-                  CodeChef
-                </a>
-                <a href="https://leetcode.com/u/sayyad_fayaz_basha/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group">
-                  <Terminal className="h-4 w-4 group-hover:text-primary transition-colors" />
-                  LeetCode
-                </a>
-              </div>
-            </div>
-
-            {/* Social Media */}
-            <div className="space-y-4">
-              <h3 className="flex items-center gap-2 text-lg font-semibold text-foreground">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
-                  <Share2 className="h-4 w-4 text-primary" />
-                </div>
-                Social Media
-              </h3>
-              <div className="space-y-3 text-sm">
-                <a href="https://www.instagram.com/sayyad_fayaz_basha/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group">
-                  <Instagram className="h-4 w-4 group-hover:text-primary transition-colors" />
-                  Instagram
-                </a>
-                <a href="https://x.com/FayazBasha0504" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group">
-                  <Twitter className="h-4 w-4 group-hover:text-primary transition-colors" />
-                  Twitter / X
-                </a>
-                <a href="https://www.threads.com/@sayyad_fayaz_basha" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group">
-                  <MessageCircle className="h-4 w-4 group-hover:text-primary transition-colors" />
-                  Threads
-                </a>
-                <a href="https://www.facebook.com/SayyadFayazBasha5/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors group">
-                  <Facebook className="h-4 w-4 group-hover:text-primary transition-colors" />
-                  Facebook
-                </a>
-              </div>
+            <div className="flex flex-col gap-2 text-sm">
+              <a href="tel:+919703029115" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                <Phone className="h-4 w-4" /> +91 9703029115
+              </a>
+              <a href="mailto:fayaz1234basha@gmail.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                <Mail className="h-4 w-4" /> fayaz1234basha@gmail.com
+              </a>
+              <span className="flex items-center gap-2 text-muted-foreground">
+                <MapPin className="h-4 w-4" /> Bangalore, Karnataka
+              </span>
             </div>
           </div>
 
-          <div className="mt-10 border-t border-border pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          {/* Merged Profiles Grid */}
+          <div className="mb-12">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-6">Connect With Me</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+              {[
+                { label: 'GitHub', href: 'https://github.com/sayyadfayazbasha-developer', icon: Github, color: 'hover:border-foreground hover:bg-foreground/5' },
+                { label: 'LinkedIn', href: 'https://www.linkedin.com/in/sayyadfayazbasha-developer/', icon: Linkedin, color: 'hover:border-blue-500 hover:bg-blue-500/5' },
+                { label: 'Portfolio', href: 'https://sayyad-fayaz-basha-showcase-portfolio.vercel.app/', icon: Globe, color: 'hover:border-primary hover:bg-primary/5' },
+                { label: 'HackerRank', href: 'https://www.hackerrank.com/profile/fayaz1234basha', icon: Trophy, color: 'hover:border-green-500 hover:bg-green-500/5' },
+                { label: 'CodeChef', href: 'https://www.codechef.com/users/fayaz1234basha', icon: Award, color: 'hover:border-amber-500 hover:bg-amber-500/5' },
+                { label: 'LeetCode', href: 'https://leetcode.com/u/sayyad_fayaz_basha/', icon: Terminal, color: 'hover:border-orange-500 hover:bg-orange-500/5' },
+                { label: 'Instagram', href: 'https://www.instagram.com/sayyad_fayaz_basha/', icon: Instagram, color: 'hover:border-pink-500 hover:bg-pink-500/5' },
+                { label: 'Twitter / X', href: 'https://x.com/FayazBasha0504', icon: Twitter, color: 'hover:border-sky-500 hover:bg-sky-500/5' },
+                { label: 'Threads', href: 'https://www.threads.com/@sayyad_fayaz_basha', icon: MessageCircle, color: 'hover:border-foreground hover:bg-foreground/5' },
+                { label: 'Facebook', href: 'https://www.facebook.com/SayyadFayazBasha5/', icon: Facebook, color: 'hover:border-blue-600 hover:bg-blue-600/5' },
+              ].map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group flex items-center gap-3 rounded-xl border border-border/60 bg-card/50 px-4 py-3 text-sm font-medium text-muted-foreground transition-all duration-300 ${item.color}`}
+                >
+                  <item.icon className="h-5 w-5 shrink-0 transition-colors duration-300 group-hover:text-primary" />
+                  <span className="truncate group-hover:text-foreground transition-colors duration-300">{item.label}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground">
               © 2025 Sayyad Fayaz Basha. Designed & Developed with ❤️
             </p>
-            <div className="flex items-center gap-3">
-              <a href="https://github.com/sayyadfayazbasha-developer" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full bg-muted hover:bg-primary/20 hover:text-primary transition-all">
-                <Github className="h-4 w-4" />
-              </a>
-              <a href="https://www.linkedin.com/in/sayyadfayazbasha-developer/" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full bg-muted hover:bg-primary/20 hover:text-primary transition-all">
-                <Linkedin className="h-4 w-4" />
-              </a>
-              <a href="https://www.instagram.com/sayyad_fayaz_basha/" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full bg-muted hover:bg-primary/20 hover:text-primary transition-all">
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a href="https://x.com/FayazBasha0504" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full bg-muted hover:bg-primary/20 hover:text-primary transition-all">
-                <Twitter className="h-4 w-4" />
-              </a>
+            <div className="flex items-center gap-2">
+              {[
+                { href: 'https://github.com/sayyadfayazbasha-developer', icon: Github },
+                { href: 'https://www.linkedin.com/in/sayyadfayazbasha-developer/', icon: Linkedin },
+                { href: 'https://www.instagram.com/sayyad_fayaz_basha/', icon: Instagram },
+                { href: 'https://x.com/FayazBasha0504', icon: Twitter },
+                { href: 'https://www.facebook.com/SayyadFayazBasha5/', icon: Facebook },
+              ].map((item) => (
+                <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-border/60 text-muted-foreground hover:bg-primary/10 hover:text-primary hover:border-primary/40 transition-all duration-300">
+                  <item.icon className="h-4 w-4" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
