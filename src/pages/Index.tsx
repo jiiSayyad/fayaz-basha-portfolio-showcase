@@ -556,7 +556,7 @@ const Portfolio = () => {
                           </div>
                           <div>
                             <p className="text-sm text-muted-foreground">Location</p>
-                            <p className="font-medium">Dharmavaram, AP</p>
+                            <p className="font-medium">Bangalore, Karnataka</p>
                           </div>
                         </div>
                       </div>
@@ -910,7 +910,7 @@ const Portfolio = () => {
                     </div>
                     <div>
                       <p className="font-medium">Location</p>
-                      <p className="text-muted-foreground">Dharmavaram, Andhra Pradesh</p>
+                      <p className="text-muted-foreground">Bangalore, Karnataka</p>
                     </div>
                   </div>
                 </div>
