@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowDown, Download, Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Code, Database, Globe, Smartphone, Award, Calendar, GraduationCap, Building, CheckCircle, Star, Palette, Image, PenTool, Share2, Video, TrendingUp } from 'lucide-react';
+import { ArrowDown, Download, Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Code, Database, Globe, Smartphone, Award, Calendar, GraduationCap, Building, CheckCircle, Star, Palette, Image, PenTool, Share2, Video, TrendingUp, User, Briefcase, Trophy, Terminal, Instagram, Twitter, MessageCircle, Facebook } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
