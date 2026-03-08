@@ -923,35 +923,6 @@ const Portfolio = () => {
                 </div>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2">
-                {[
-                  { title: 'Professional Profiles', links: profileGroups.professional },
-                  { title: 'Coding Profiles', links: profileGroups.coding },
-                  { title: 'Social Media', links: profileGroups.social },
-                ].map((group) => (
-                  <Card key={group.title} className="card-enhanced bg-card/80">
-                    <CardHeader className="pb-3">
-                      <CardTitle className="text-lg">{group.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="pt-0">
-                      <div className="space-y-2">
-                        {group.links.map((link) => (
-                          <a
-                            key={link.label}
-                            href={link.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-between gap-3 rounded-lg border border-border/60 px-3 py-2 text-sm text-foreground transition-colors hover:bg-muted/40 hover:border-primary/30"
-                          >
-                            <span>{link.label}</span>
-                            <ExternalLink className="h-4 w-4 text-primary" />
-                          </a>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
             </div>
             
             <Card className="card-enhanced fade-in-up bg-card">
