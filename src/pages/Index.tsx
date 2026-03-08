@@ -12,6 +12,7 @@ import emailjs from '@emailjs/browser';
 import profilePhoto from '@/assets/profile-image.jpg';
 import heroBg from '@/assets/hero-bg.jpg';
 import techToolkitImage from '@/assets/tech-toolkit-preview.png';
+import eventHandlerImage from '@/assets/event-handler-preview.png';
 import techmartImage from '@/assets/techmart-preview.png';
 import { ProjectSection } from '@/components/ProjectSection';
 
@@ -164,7 +165,7 @@ const Portfolio = () => {
       technologies: ['React.js', 'Tailwind CSS', 'Node.js', 'Express', 'MySQL'],
       demoLink: 'https://event-handler-pro-management.vercel.app/',
       codeLink: 'https://github.com/sayyadfayazbasha-developer',
-      image: techToolkitImage,
+      image: eventHandlerImage,
     },
     {
       title: 'Tech Academic Toolkit',
